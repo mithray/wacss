@@ -1,0 +1,77 @@
+$musical_tuning: "just-intonation" // just-intonation or equal-temperament
+
+$perfect_unison: 1
+$minor_second: 17 / 16
+$major_second: 9 / 8
+$minor_third: 19 / 16
+$major_third: 5 / 4
+$perfect_fourth: 4 / 3
+$diminished_fifth: 17 / 12
+$perfect_fifth: 3 / 2
+$minor_sixth: 19 / 12
+$major_sixth: 5 / 3
+$minor_seventh: 16 / 9
+$major_seventh: 15 / 8
+$perfect_octave: 2
+
+$just_intonation: ( 1, 17/16, 9/8, 19/16, 5/4, 4/3, 17/12, 3/2, 19/12, 5/3, 16/9, 15/8, 2)
+$equal_temperament: ( 1, 1.0594630943592953, 1.122462048309373, 1.1892071150027212, 1.2599210498948734, 1.3348398541700346, 1.4142135623730954, 1.498307076876682, 1.5874010519682, 1.6817928305074297, 1.7817974362806794, 1.887748625363388, 2)
+
+/*****************************
+ * Abbreviations
+ *****************************/
+
+$golden_ratio: 1.61803398874989484
+$gr: $golden_ratio
+
+$P1: $perfect_unison
+$m2: $minor_second
+$M2: $major_second
+$m3: $minor_third
+$M3: $major_third
+$P4: $perfect_fourth
+$A4: $diminished_fifth
+$d5: $diminished_fifth
+$P5: $perfect_fifth
+$m6: $minor_sixth
+$M6: $major_sixth
+$m7: $minor_seventh
+$M7: $major_seventh
+$P8: $perfect_octave
+
+/*******************************
+ *Scales
+ *******************************/
+
+
+$ionic: $P1 $M2 $M3 $P4 $P5 $M6 $M7 $P8
+$dorian: $P1 $M2 $m3 $P4 $P5 $M6 $m7 $P8
+$phrygian: $P1 $m2 $m3 $P4 $P5 $m6 $m7 $P8
+$lydian: $P1 $M2 $M3 $A4 $P5 $M6 $M7 $P8
+$mixolydian: $P1 $M2 $M3 $P4 $P5 $M6 $m7 $P8
+$aeolian: $P1 $M2 $m3 $P4 $P5 $m6 $m7 $P8
+$locrian: $P1 $m2 $m3 $P4 $d5 $m6 $m7 $P8
+
+$scale: ""
+
+$rational_scale: 2/2 9/8 8/7 7/6 6/5 5/4 9/7 4/3 7/5 3/2 8/5 5/3 7/4 9/5 4/2 9/4 7/3 5/2 8/3 6/2 7/2 8/2 9/2
+$thirds: 3/3 4/3 5/3 6/3 7/3 8/3 9/3 10/3 11/3 12/3 14/3 15/3 16/3 17/3 18/3 19/3 20/3
+
+@function get_scale_points( $octaves: 3, $mode: $aeolian, $scale_number_of_points: 6)
+	$scale: ()
+	$note: ()
+	$scale_points: ()
+	@for $i from 1 through $octaves
+	    @for $k from 1 through ( length($mode) - 1 )
+		    $scale: join($scale, nth( $mode, $k) + $i - 1)
+	$scale_length: length($scale)
+	@for $j from 1 through $scale_number_of_points
+		$scale_degree: floor( $scale_length * $j / $scale_number_of_points )
+		$scale_points: join($scale_points, nth($scale, $scale_degree))
+	@return $scale_points
+
+@function get_modular_points( $ratio, $scale_number_of_points)
+	$scale_points: 1
+	@for $i from 1 through $scale_number_of_points
+		$scale_points: join( $scale_points, $ratio * nth( $scale_points, length($scale_points) ) )
+	@return $scale_points

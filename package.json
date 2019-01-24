@@ -1,0 +1,15 @@
+{
+  "name": "@alchmy/mnd",
+  "version": "0.0.12",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "sass-web-fonts": "^2.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raymond Smith <mithray@protonmail.com> (mithray.github.io/mnd)",
+  "license": "GPL-3.0"
+}

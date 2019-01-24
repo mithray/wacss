@@ -1,0 +1,33 @@
+=summary_animate($height_summary, $height_details)
+	$animation_speed: 500ms
+	
+	details > *
+	  transition: all $animation_speed ease-out
+	
+	/*eases in the details element*/
+	.details-animated[open]
+	    height: $height_details + $height_summary
+	    background: green
+	.details-animated:not([open])
+	    height: $height_summary
+	
+	/* eases in the contents of the details element
+	.details-animated[open] .details_wrapper
+	    position: relative
+	    top: 0em
+	    opacity: 1
+	.details-animated:not([open]) .details_wrapper
+	    top: $height_details * -1
+	    position: relative
+	    opacity: 0
+
+#protocol ul li:first-child > details > summary
+		border-radius: .6em .6em 0 0
+		overflow: hidden
+details summary
+	background: rgba($color_primary, .2)
+	cursor: pointer
+details summary:hover
+	background: rgba($color_primary, .3)
+details > *:not(summary)
+	background: rgba($color_primary, .1)

@@ -1,0 +1,88 @@
+/***********************************
+ * Ratios
+ ***********************************/
+
+@import ratios
+
+$octaves: 2 					// This sets the em size of the h1 text
+$mode: $lydian					// ionic, dorian, phrygian, lydian, mixolydian, aeolian, locrian
+$ratio: 1.2
+$scale_number_of_points: 6		// number of points in the scale
+$scale_points: get_scale_points($octaves: $octaves, $mode: $mode, $scale_number_of_points: $scale_number_of_points)
+$scale_points: get_modular_points( $ratio, $scale_number_of_points)
+
+/***********************************
+ * Typography
+ ***********************************/
+
+$font_text: "Open Sans", sans-serif
+$font_headings: "Tangerine", cursive
+$font_size: calc( 7pt + .8vw)
+
+/***********************************
+ * Colors
+ ***********************************/
+
+$color_hue_difference: 90
+$contrast: 95
+
+$color_primary_default:     #445577
+$color_secondary_default:   adjust-hue($color_primary_default, $color_hue_difference)
+$color_tertiary_default:    adjust-hue($color_primary_default, 360 - $color_hue_difference)
+$color_light_default:       lighten( black, 1% * (100 - $contrast / 2))
+$color_dark_default:        darken( white,  1% * (100 - $contrast / 2))
+
+@if not(variable-exists('color_primary'))
+    $color_primary:     $color_primary_default      !global
+@if not(variable-exists('color_secondary'))
+    $color_secondary:   $color_secondary_default    !global
+@if not(variable-exists('color_tertiary'))
+    $color_tertiary:    $color_tertiary_default     !global
+@if not(variable-exists('color_light'))
+    $color_light:       $color_light_default        !global
+@if not(variable-exists('color_dark'))
+    $color_dark:        $color_dark_default         !global
+
+/************************
+ * Component Interaction
+ ************************/
+
+section.wide_column
+	width: 96%
+
+/************************
+ * Size Components 
+ ************************/
+
+$navbar_size: 1.5rem
+$footer_size: 1.8rem
+$hero_size: 100vh
+
+section#hero
+	height: $hero_size
+header#navbar
+	font-size: $navbar_size
+footer#footer
+	font-size: $footer_size
+
+
+/************************
+ * Typograhy
+ ************************/
+
+.heading
+	font-family: $font_headings
+.maintitle
+	font-family: $font_headings
+.subtitle
+	font-family: $font_text
+
+html, body 
+	font-family: $font_text
+	min-height: 100%
+	main
+		display: flex
+		flex-direction: column
+		justify-content: flex-start
+		align-items: center
+		align-content: center

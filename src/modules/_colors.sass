@@ -1,0 +1,102 @@
+@import variables
+
+/***************************************
+ * Color 1.0
+ ***************************************/
+
+/***************************************
+ * Color 1.1: Background-Font Contrast
+ ***************************************/
+
+@function contrast($color)
+	@if (lightness($color) > 50 )
+		@return $color_dark
+	@else
+		@return $color_light
+
+/***************************************
+ * Color 1.2 - Theme Colors
+ ***************************************/
+
+$colors: ( $color_primary, $color_secondary, $color_tertiary, $color_dark, $color_light)
+$color_names: ( 'primary', 'secondary', 'tertiary', 'dark', 'light')
+
+@for $i from 1 through length($colors) 
+
+	$color: nth( $colors, $i)
+	$color_name: nth( $color_names, $i)
+	$color_background: $color
+	$color_font: contrast($color_background)
+
+	/***************************************
+	 * Color 1.2.1 - Parts
+	 ***************************************/
+	
+	/* Color Parts - Background	 */
+
+	$cbh: hue($color_background)
+	$cbs: saturation($color_background)
+	$cbl: lightness($color_background)
+
+	/* Color Parts - Font		 */
+
+	$cfh: hue($color_font)
+	$cfs: saturation($color_font)
+	$cfl: lightness($color_font)
+
+	/*************************
+	 * Color 1.2.2 - Base
+	 *************************/
+
+	.color_#{$color_name}
+	    background: 	hsla( $cbh, $cbs, $cbl, 1)
+	    color:			hsla( $cfh, $cfs, $cfl, .9)
+
+	/*************************
+	 * Color 1.2.3 - Selection
+	 *************************/
+
+	.color_#{$color_name}
+		*:focus
+			outline:				.2em dashed hsla( $cfh, $cfs, $cfl, .7)
+			-moz-outline-radius:	.05em
+		::selection
+		    background: 	hsla( $cfh, $cfs, $cfl, .9)
+		    color:			hsla( $cbh, $cbs, $cbl, .9)
+		::-moz-selection
+		    background: 	hsla( $cfh, $cfs, $cfl, .9)
+		    color:			hsla( $cbh, $cbs, $cbl, .9)
+
+	/*************************
+	 * Color 1.2.4 - Links
+	 *************************/
+
+	.color_#{$color_name}
+		a
+		    color:		hsla( $cfh, 50, 50, .9)
+		a:visited
+		    color:		hsla( $cfh, 30, 40, .9)
+		a:hover
+		    color:		hsla( $cfh, 70, 60, .9)
+	
+	/*************************
+	 * Color 1.2.5 - Selected Links
+	 *************************/
+
+	.color_#{$color_name}
+		a
+			&::selection
+			    background: hsla( $cfh, $cfs, $cfl, .9)
+			    color: 		hsla( $cbh, 50, 50, .9)
+			&:visited
+			   	color: 		hsla( $cbh, 30, 40, .9)
+			&:hover
+			   	color: 		hsla( $cbh, 70, 60, .9)
+			&::selection:visited
+			    color: 		hsla( $cbh, 30, 40, .9)
+			&::selection:hover
+			   	color: 		hsla( $cbh, 70, 60, .9)
+
+@media print
+    main, main.light, body, body.light
+        background: white
