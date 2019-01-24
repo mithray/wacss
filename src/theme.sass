@@ -2,18 +2,21 @@
  * Color
  */
 
-$color_primary: rgba( 30, 10, 10, 1)
+$color_primary: rgba( 240, 240, 240, 1)
+$color_primary: rgba( 20, 20, 20, 1)
 $color_secondary: rgba( 100, 100, 100, 1)
 $color_tertiary: rgba(100, 100, 100, 1)
 
 $color_background: $color_primary
+$color_font_light: rgba(245,245,245,.7)
+$color_font_dark: rgba(20,20,20,.7)
 
 /*
  * Typography
  */
 
-$font_text: 'Cormorant Garamond', serif
-$font_headings: 'Lato', sans-serif
+$font_text: 'Open Sans', serif
+$font_headings: 'Raleway', sans-serif
 $font_size: calc( 7pt + .8vw)
 
 $scale: 1.61
@@ -24,3 +27,52 @@ $scale: 1.61
 
 $sharpness_animation: 300ms
 $sharpness_corners: .1em
+
+/*
+ * Typography
+ */
+h1, h2, h3, h4, h5, h6
+	text-align: center
+	font-family: $font_headings
+
+body
+	font-size: $font_size
+	font-family: $font_text
+
+.page
+	width: 62%
+	max-width: 1200px
+	margin: 0 auto
+
+img
+	max-width: 100%
+
+@media ( max-width: 599px)
+	.page 
+		width: 96%
+
+@media ( max-width: 1199px)
+	.page 
+		width: calc(516px + 14%)
+
+/*
+ * Color
+ */
+/***************************************
+ * Color 1.1: Background-Font Contrast
+ ***************************************/
+
+@function contrast($color)
+	@if (lightness($color) > 50 )
+		@return $color_font_dark
+	@else
+		@return $color_font_light
+
+body
+	background: $color_background
+	color: contrast($color_background)
+img
+	max-width: 100%
+	opacity: .7
+a
+	color: saturate($color_secondary,30)

@@ -13,16 +13,21 @@
 /*
  * Sharpness
  */
+/*
+ * Typography
+ */
 h1, h2, h3, h4, h5, h6 {
   text-align: center;
-    text-align-font-family: "Lato", sans-serif; }
+  font-family: "Raleway", sans-serif; }
+
+body {
+  font-size: calc( 7pt + .8vw);
+  font-family: "Open Sans", serif; }
 
 .page {
-  font-size: calc( 7pt + .8vw);
   width: 62%;
   max-width: 1200px;
-  margin: 0 auto;
-    margin-font-family: "Cormorant Garamond", serif; }
+  margin: 0 auto; }
 
 img {
   max-width: 100%; }
@@ -34,6 +39,23 @@ img {
 @media (max-width: 1199px) {
   .page {
     width: calc(516px + 14%); } }
+
+/*
+ * Color
+ */
+/***************************************
+ * Color 1.1: Background-Font Contrast
+ ***************************************/
+body {
+  background: #141414;
+  color: rgba(245, 245, 245, 0.7); }
+
+img {
+  max-width: 100%;
+  opacity: .7; }
+
+a {
+  color: #824646; }
 
 /********************************
  * Derived - Post Theme
