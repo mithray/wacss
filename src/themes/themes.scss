@@ -1,0 +1,6 @@
+@import "grayscale.scss";
+@import "myth.scss";
+@import "night.scss";
+
+$themes: map-merge( $grayscale, $myth);
+$themes: map-merge( $themes, $night );

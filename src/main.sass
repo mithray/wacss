@@ -2,16 +2,22 @@
  * Foundations - Pre Theme
  ********************************/
 
+
 @import "../node_modules/sass-web-fonts/web-fonts"
+
 
 /********************************
  * Theme
  ********************************/
 
-@import "theme"
+
+@import "themes/themes.scss"
+$theme: map-get( $themes, "myth")
+
 
 /********************************
  * Derived - Post Theme
  ********************************/
 
 
+@import "index"

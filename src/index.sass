@@ -1,15 +1,20 @@
 /*
- * Color
+ * Theme
  */
 
-$color_primary: rgba( 240, 240, 240, 1)
-$color_primary: rgba( 20, 20, 20, 1)
-$color_secondary: rgba( 100, 100, 100, 1)
-$color_tertiary: rgba(100, 100, 100, 1)
+@import "themes/themes.scss"
 
-$color_background: $color_primary
-$color_font_light: rgba(245,245,245,.7)
-$color_font_dark: rgba(20,20,20,.7)
+$theme: map-get($themes, "night") !default
+
+$color_primary: map-get($theme, "primary") 
+$color_secondary: map-get($theme, "secondary")
+$color_tertiary: map-get($theme, "tertiary")
+
+$color_background: map-get($theme, "background_dark")
+$color_background_light: map-get($theme, "background_light")
+$color_background_dark: map-get($theme, "background_dark")
+$color_font_light: map-get($theme, "font_light")
+$color_font_dark: map-get($theme, "font_dark")
 
 /*
  * Typography
@@ -31,6 +36,7 @@ $sharpness_corners: .1em
 /*
  * Typography
  */
+
 h1, h2, h3, h4, h5, h6
 	text-align: center
 	font-family: $font_headings

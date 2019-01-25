@@ -1,0 +1,13 @@
+/*
+ 	("night": 
+ 		"primary": "#123123"
+ 		"secondary": "#444765")
+  	("blue":
+ 		"primary": "#123183"
+ 		"secondary": "#444765")
+ 
+ $theme: map-get($themes, "blue")
+ 
+ body
+ 	color: map-get($theme, "primary")
+ */
