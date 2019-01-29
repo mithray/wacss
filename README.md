@@ -1,4 +1,5 @@
 # material_nd
+[DISCLAIMER: nothing here actually works. I'm just saving stuff here.]
 
 #### Standards
 *The Following standards will be perused, but not necessarliy followed completely, we will specify in each case the extent to which it is followed*
@@ -50,3 +51,32 @@ This can also be represented by the following array, which looks very similar to
 
 https://medium.com/ux-in-motion/creating-usability-with-motion-the-ux-in-motion-manifesto-a87a4584ddc
 www.appanimations.com
+
+
+
+Should have structure something like this
+
+```sass
+/***********************
+ * Globals
+ ***********************/
+
+/*	Typography			*/
+/*	Color				*/
+/*  Media				*/
+
+/***********************
+ * Classes
+ ***********************/
+
+/*	Elevation			*/
+
+/***********************
+ * Components
+ ***********************/
+/* Buttons	*/
+/* Forms	*/
+/* Tables	*/
+/* Schema	*/
+
+```
