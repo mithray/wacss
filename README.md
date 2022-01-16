@@ -124,7 +124,9 @@ This can also be represented by the following array, which looks very similar to
 
 (A(AA(AAA,AAB),AB(ABA,ABB)),B(BA(BAA,BAB),BB(BBA,BBB)))
 
+The structured nature of this hopefully also demonstrates how an abstract data structure of arbitrary depth could be turned into a visual component. :smile:
+
 ### References
 
-[Creating Usability With Motion](https://medium.com/ux-in-motion/creating-usability-with-motion-the-ux-in-motion-manifesto-a87a4584ddc)
-[App Animations](www.appanimations.com)
+- [Creating Usability With Motion](https://medium.com/ux-in-motion/creating-usability-with-motion-the-ux-in-motion-manifesto-a87a4584ddc)
+- [App Animations](www.appanimations.com)
