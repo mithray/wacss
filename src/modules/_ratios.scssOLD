@@ -1,0 +1,23 @@
+
+/*
+@function get_scale_points( $octaves: 3, $mode: $aeolian, $scale_number_of_points: 6)
+	$scale: ()
+	$note: ()
+	$scale_points: ()
+	@for $i from 1 through $octaves
+	    @for $k from 1 through ( length($mode) - 1 )
+		    $scale: join($scale, nth( $mode, $k) + $i - 1)
+	$scale_length: length($scale)
+	@for $j from 1 through $scale_number_of_points
+		$scale_degree: floor( $scale_length * $j / $scale_number_of_points )
+		$scale_points: join($scale_points, nth($scale, $scale_degree))
+	@return $scale_points
+
+@function get_modular_points( $ratio, $scale_number_of_points)
+	$scale_points: 1
+	@for $i from 1 through $scale_number_of_points
+		$scale_points: join( $scale_points, $ratio * nth( $scale_points, length($scale_points) ) )
+	@return $scale_points
+
+
+

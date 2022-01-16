@@ -1,15 +1,24 @@
 {
-  "name": "@alchmy/mnd",
-  "version": "0.0.12",
-  "description": "",
+  "name": "@mithrayls/regulacss",
+  "version": "0.0.13",
+  "description": "*Semantic, Classless, Componentized Css*",
   "main": "index.js",
   "dependencies": {
-    "sass-web-fonts": "^2.1.0"
+    "sass": "^1.48.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Raymond Smith <mithray@protonmail.com> (mithray.github.io/mnd)",
-  "license": "GPL-3.0"
+  "author": "Raymond Smith <mithray@protonmail.com> (mithray.github.io/regularcss)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mithrayls/mnd.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/mithrayls/mnd/issues"
+  },
+  "homepage": "https://github.com/mithrayls/mnd#readme"
 }

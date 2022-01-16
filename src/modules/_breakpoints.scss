@@ -1,0 +1,72 @@
+// https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/
+
+// Upper Boundaries. Used for the sake of "mobile first". //
+$breakpoints:
+  ( "mobile-min": 0px
+  , "mobile-mid": 300px 
+  , "mobile-max": 600px	
+
+  , "tablet-min": 600px 
+  , "tablet-mid": 900px
+  , "tablet-max": 1200px
+
+  , "laptop-min": 1200px
+  , "laptop-mid": 1500px
+  , "laptop-max": 1800px
+
+  , "desktop-min": 1800px
+  , "desktop-mid": 2400px
+  , "desktop-max": 2800px
+  )
+
+/*
+$breakpoints:
+  ( 320px	// Mobile Portrait
+  , 375px	
+  , 414px
+  , 568px // Mobile Landscape
+  , 667px
+  , 736px
+  , 768px // Tablet Portrait
+  , 812px	
+  , 834px
+  , 1024px // Tablet Landscape
+  , 1112px
+  , 1366px // Laptop
+  , 1440px
+  , 1680px // Desktop
+  , 1920px
+  )
+
+*/
+
+/******************************************************************************************
+ *
+ *	||Golden Column||
+ *
+ *	A column which for:
+ *     	- Small Screens:				(Fill for maximizing small screens) Fills the width 96%
+ *     	- Small - Medium Screens:		(Transition to Medium screen using Golden Ratio column) Stays at the width of the smaller screen
+ *		- Medium Screens:				(Golden Ratio Column) Fills the width 61.8%
+ *
+ *****************************************************************************************/
+
+
+/*
+
+$small_device_width: .94
+
+
+.golden_column
+	width: $small_device_width * 100%
+@media (min-width: $breakpoint_1)
+	body
+		font-size: calc( 7pt + .8vw)
+@media (min-width: $breakpoint_2)
+	.golden_column
+		width: $breakpoint_2 * $small_device_width
+@media (min-width: $breakpoint_3)
+	.golden_column
+		width: 100% / $gr
+
+*/

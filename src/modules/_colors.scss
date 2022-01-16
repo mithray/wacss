@@ -1,9 +1,3 @@
-@import variables
-
-/***************************************
- * Color 1.0
- ***************************************/
-
 /***************************************
  * Color 1.1: Background-Font Contrast
  ***************************************/
@@ -98,5 +92,5 @@ $color_names: ( 'primary', 'secondary', 'tertiary', 'dark', 'light')
 			   	color: 		hsla( $cbh, 70, 60, .9)
 
 @media print
-    main, main.light, body, body.light
+    html, body, main
         background: white

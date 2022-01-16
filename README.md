@@ -1,22 +1,107 @@
-# material_nd
+# Regulacss
+*Semantic, Classless, Componentized Css*
+
 [DISCLAIMER: nothing here actually works. I'm just saving stuff here.]
 
-#### Standards
-*The Following standards will be perused, but not necessarliy followed completely, we will specify in each case the extent to which it is followed*
+## Introduction
 
-We have some unique ideas about styling that we have not yet been implemented or even crystalized in our own minds. In a word, it's about applying mathematics and the science of perception to Material Design, and the concept of an n-dimensional visual space. We will seek to study and understand the following style guides, and if possible, we will be a superset of these standards, applying these rules and more.
+This is a CSS framework designed to work well with no classes, as long as you use proper Semantic HTML5! 
+
+## Features
+
+- Classless
+- Encourages Semantic HTML5, Accessibility and Schema markup to replace classes
+- Shallow learning curve
+- Modern
+- Generic
+- Easy to Use
+- Pure Css Only(compiled from SCSS). 
+- Traditional Modular HTML / CSS structure.
+  - HTML represents State
+  - CSS is used for display
+  - Javascript and/or following hyperlinks is used to change state.
+
+## Motivation
+
+Motivated by the things I hate about the web.
+
+- Too much Javascript
+- Ugly HTML
+- Non Standard HTML5
+- Hardly anybody uses Semantic Markup which makes usability and web scraping harder
+- Too many trackers
+- Webpages are too heavy
+- "Web Apps" instead of "Webpages". I want to read a blog, not download an app. Actually, I would rather read this with lynx. I don't want to sign up to your emailing list or hookup with local singles 5 miles from my location. Why do you even know my location? This is sketchy! I'm out of here!
+
+Basically, the idea behind this CSS is that a webpage is an HTML document, which describes some information that somebody wants to publicize. I wish the Server would justsend that information, and let the client decide how to render it. This is often a preferred usecase for myself and many others, and it already is the case for blind and some other access impaired users. This library is designed to be the kind of generic CSS that can style an HTML document client side without accepting any CSS from the server. This will only really work if people use proper HTML! I don't really expect this way of doing things to become the primary way to use the web any time soon, but I think it *is* preferable for many users, who will often have their own stylesheets or nightmode, or print the document because it's easier to read off screen.
+
+## Desired Usability
+
+I intend this library to be able to display many of the modern looking components that are common on the web today. However because I intend this to be generic and usable on a client without any display clues from the server, it is necessary to use very standard HTML5 and Schema markup without classes, as only these can be expected to be generic. Class names are never generic, but this is precisely the intent of HTML5 and Schema.
+
+It is easy to find a standard way to represent the most common HTML elements, just use the correct HTML5 elements like `input`, `button`, `form` etc( still designers and libraries seem to not use these!). However more complex components, such as image galleries, do not have standardized HTML representations. For these components, we have tried to find HTML/Schema interpretations that are consistent with standards, and when these are followed, the CSS interprets the HTML as being this component and the markup is applied. 
+
+More than likely, to understand you probably just need to see how it is used.
+
+
+## Contents
+
+1. Atoms
+  - Button
+  - Chip
+  - Code
+  - Input. Should be able to pass it a JSON Schema and an input field is created.
+  	- Text
+  	- Various Types
+  	- Combo box (select, multiple)
+  	- Checkbox ()
+  	- File
+  	- Search
+  	- Select (with optgroup)
+    - Slider
+  - Link
+  - List
+  - Title
+
+2. Molecules
+  - Accordion
+  - Breadcrumb
+  - Card(Tile)
+  - Form
+  - Notification
+  - Pagination
+  - Table
+  - Tabs
+  - Tooltip(Can be seen as a more advanced "title" attribute)
+  - Various Schema.org or other Objects
+
+3. Cells
+  - Footer
+  - Grid
+  - Header
+  - Hero
+  - Navbar
+
+4. Globals
+  - Typography
+  - Color
+  - Media
+
+### Card
+
+#### References
+*The Following references are perused, but not necessarliy followed*
 
 1. [Google](https://material.io/).
-2. [U.S. Web Design System](https://github.com/uswds/uswds)
 3. We are still looking for good resources to include to apply the Mathematics :-)
 
-[Style](my custom url for my new standard based on MD). We are working on a new Standard which extends Googles Material Design that adds more algorithmic exactness to color and distance css generation based on the science of perception, as well as an n-dimensional concept of webpages. 3 for Space, 1 for Time, and an extra n - 4 dimensions for data that changes upon clicks or other interactive activity. 
 
-For example, an interactive webpage where clicks provide interactivity, will be 5 dimensional. As its behaviour is defined by 3 space dimensions, 1 time dimension, and the user interaction defined by a click.
-Generic elements like div should be used as much as possible only for styling. More specific and semantic elements should be used as much as possible. Custom elements are encouraged to use these HTML tags, custom html elements should be named semantically.
+## Dimensionality
 
-a templating engine like jade or perhaps even yaml, will give you the opportunity to quickly write website with custom elements. Pug should work very well, and it could use the mixin syntax to add custom elements, this way we can get custom elements by prepending + to a custom element-name. Otherwise, they could just be treated as a replacement for the mixin syntax, this might be preferable, as it would probably make it more portable. One suggested naming convention for your components is to have the designer name, framework, or organization as the first word, and the top-level Tag of your custom component as the second word. For example, [materialize](http://materializecss.com/navbar.html) might decide to make a custom component like so:
+In a word, it's about applying mathematics and the science of perception to Material Design, and the concept of an n-dimensional visual space. We will seek to study and understand the following style guides, and if possible, we will be a superset of these standards, applying these rules and more.
 
+
+[Style](my custom url for my new standard based on MD). We are working on a new Standard which extends Googles Material Design that adds more algorithmic exactness to color and distance css generation based on the science of perception, as well as an n-dimensional concept of webpages. 3 for Space, 1 for Time, and an extra n - 4 dimensions for data that changes upon clicks or other interactive activity. For example, an interactive webpage where clicks provide interactivity, will be 5 dimensional. As its behaviour is defined by 3 space dimensions, 1 time dimension, and the user interaction defined by a click.
 
 Any webpage is essentially 4d. And should be thought of this way.
 
@@ -53,30 +138,3 @@ https://medium.com/ux-in-motion/creating-usability-with-motion-the-ux-in-motion-
 www.appanimations.com
 
 
-
-Should have structure something like this
-
-```sass
-/***********************
- * Globals
- ***********************/
-
-/*	Typography			*/
-/*	Color				*/
-/*  Media				*/
-
-/***********************
- * Classes
- ***********************/
-
-/*	Elevation			*/
-
-/***********************
- * Components
- ***********************/
-/* Buttons	*/
-/* Forms	*/
-/* Tables	*/
-/* Schema	*/
-
-```

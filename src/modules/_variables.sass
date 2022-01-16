@@ -4,20 +4,15 @@
 
 @import ratios
 
-$octaves: 2 					// This sets the em size of the h1 text
-$mode: $lydian					// ionic, dorian, phrygian, lydian, mixolydian, aeolian, locrian
-$ratio: 1.2
-$scale_number_of_points: 6		// number of points in the scale
-$scale_points: get_scale_points($octaves: $octaves, $mode: $mode, $scale_number_of_points: $scale_number_of_points)
-$scale_points: get_modular_points( $ratio, $scale_number_of_points)
-
 /***********************************
  * Typography
  ***********************************/
 
-$font_text: "Open Sans", sans-serif
-$font_headings: "Tangerine", cursive
-$font_size: calc( 7pt + .8vw)
+// Constants //
+
+// Applied //
+$font-heading: $font-serif;
+$font-body: $font-sans-serif;
 
 /***********************************
  * Colors
@@ -47,42 +42,11 @@ $color_dark_default:        darken( white,  1% * (100 - $contrast / 2))
  * Component Interaction
  ************************/
 
-section.wide_column
-	width: 96%
-
 /************************
  * Size Components 
  ************************/
-
-$navbar_size: 1.5rem
-$footer_size: 1.8rem
-$hero_size: 100vh
-
-section#hero
-	height: $hero_size
-header#navbar
-	font-size: $navbar_size
-footer#footer
-	font-size: $footer_size
 
 
 /************************
  * Typograhy
  ************************/
-
-.heading
-	font-family: $font_headings
-.maintitle
-	font-family: $font_headings
-.subtitle
-	font-family: $font_text
-
-html, body 
-	font-family: $font_text
-	min-height: 100%
-	main
-		display: flex
-		flex-direction: column
-		justify-content: flex-start
-		align-items: center
-		align-content: center

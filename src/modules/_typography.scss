@@ -1,0 +1,76 @@
+@import "ratios";
+@import "functions";
+@import "breakpoints";
+//@import "variables";
+
+$color-primary: green;
+
+$font-serif: Freight Text Pro,-apple-system-ui-serif, ui-serif,Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
+$font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$font-monospace: IBM Plex Mono, SFMono-Regular,Consolas,Menlo,Andale,monospace;
+
+$font-body: $font-sans-serif;
+$font-headings: $font-serif;
+$font-code: $font-monospace;
+
+$font-size: calc( .7em + 1.1vw);
+
+:root {
+  --font-serif: #{$font-serif};
+  --font-sans-serif: #{$font-sans-serif};
+  --font-monospace: #{$font-monospace};
+
+  --font-body: #{$font-sans-serif};
+  --font-headings: #{$font-serif};
+  --font-code: #{$font-monospace};
+
+  --color-primary-hue: 150;
+
+  --font-color-body: hsla(0,0%,0%,.8);
+  --font-color-headings: hsla(var(--color-primary-hue),90%,20%,.9);
+
+  --font-size: calc( .7em + 1.1vw );
+
+  --line-height: var(--golden-ratio); 
+}
+
+html, body {
+	font-size: var(--font-size);
+	font-family: var(--font-body);
+  line-height: var(--line-height);
+  color: var(--font-color-body);
+}
+
+h1, h2, h3, h4, h5, h6, legend, header {
+  font-family: var(--font-headings);
+  color: var(--font-color-headings);
+}
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: calc( 1em * var(--font-scale-#{ 7 - $i }) );
+  }
+}
+
+@mixin font-scale-variables ($ratio) {
+  @for $i from 1 through 6 {
+    --font-scale-#{ 7 - $i}: #{pow($ratio, 6 - $i)};
+  }
+
+}
+:root{
+  @media screen and (min-width: map-get($breakpoints,"mobile-min")){
+    @include font-scale-variables($minor-second)
+  }
+  @media screen and (min-width: map-get($breakpoints,"mobile-mid")){
+    @include font-scale-variables($major-second)
+  }
+  @media screen and (min-width: map-get($breakpoints,"mobile-max")){
+    @include font-scale-variables($minor-third)
+  }
+  @media screen and (min-width: map-get($breakpoints,"tablet-min")){
+    @include font-scale-variables($major-third)
+  }
+  @media screen and (min-width: map-get($breakpoints,"desktop-min")){
+    @include font-scale-variables($perfect-fourth)
+  }
+}
