@@ -7,15 +7,22 @@
 
 This is a CSS framework designed to work well with no classes, as long as you use proper Semantic HTML5! 
 
-## Features
+## Design Goals
 
-- Classless
-- Encourages Semantic HTML5, Accessibility and Schema markup to replace classes
-- Shallow learning curve
-- Modern
-- Generic
-- Easy to Use
-- Pure Css Only(compiled from SCSS). 
+- International
+  - Utilizing global standards.
+  - Language tagging with translation hooks
+  - Easy to learn. No parochial class names. Just widely accepted HTML and Schema.
+- Accessible.
+  - Colorblind users
+  - Blind users
+  - Keyboard users
+  - Robots users
+  - Poorly connected users("developing world")
+- Standardized
+- Fast
+  - Less Javascript
+  - Pure CSS wherever possible
 - Traditional Modular HTML / CSS structure.
   - HTML represents State
   - CSS is used for display
@@ -87,23 +94,9 @@ More than likely, to understand you probably just need to see how it is used.
   - Color
   - Media
 
-### Card
+## Dimensionality and UX
 
-#### References
-*The Following references are perused, but not necessarliy followed*
-
-1. [Google](https://material.io/).
-3. We are still looking for good resources to include to apply the Mathematics :-)
-
-
-## Dimensionality
-
-In a word, it's about applying mathematics and the science of perception to Material Design, and the concept of an n-dimensional visual space. We will seek to study and understand the following style guides, and if possible, we will be a superset of these standards, applying these rules and more.
-
-
-[Style](my custom url for my new standard based on MD). We are working on a new Standard which extends Googles Material Design that adds more algorithmic exactness to color and distance css generation based on the science of perception, as well as an n-dimensional concept of webpages. 3 for Space, 1 for Time, and an extra n - 4 dimensions for data that changes upon clicks or other interactive activity. For example, an interactive webpage where clicks provide interactivity, will be 5 dimensional. As its behaviour is defined by 3 space dimensions, 1 time dimension, and the user interaction defined by a click.
-
-Any webpage is essentially 4d. And should be thought of this way.
+We seek to create interfaces which are as much as possible globally accessible with high usability by creating interfaces which mimic the real multidimensional world in aspects such as motion to represent state change, shadows, lighting to represent page depth, and color to present meaning, interact with shadows, and show page depth, provide easy use with sufficient contrast. In order to meet these goals we seek to understand well the science and mathematics of color, lighting, movement, etc. We raise the concept of an n-dimensional data space with spatial, time, and data dimensions.
 
 A piece of paper is 2-dimensional. The Material Design specs draw an important point to our attention however. That is, that depth on a page is important, and they offer built-in classes for an easier presentation of depth and shadow. This spec treats html documents as essentially 3dimensional. However, the aspect of time can also be thought of as a dimension in a dynamic web page, as elements might change and slide shows might switch elements in and out. Thus, it is helpful to be aware that we actually already think of a dynamic, material design web page as varying along the four coordinates x,y,z,t. With dynamic data or various interaction methods, we can think of a web page having more than 4 dimensions. Each 
 
@@ -131,10 +124,7 @@ This can also be represented by the following array, which looks very similar to
 
 (A(AA(AAA,AAB),AB(ABA,ABB)),B(BA(BAA,BAB),BB(BBA,BBB)))
 
+### References
 
-
-
-https://medium.com/ux-in-motion/creating-usability-with-motion-the-ux-in-motion-manifesto-a87a4584ddc
-www.appanimations.com
-
-
+[Creating Usability With Motion](https://medium.com/ux-in-motion/creating-usability-with-motion-the-ux-in-motion-manifesto-a87a4584ddc)
+[App Animations](www.appanimations.com)
