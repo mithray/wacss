@@ -131,9 +131,9 @@ This can also be represented by the following array, which looks very similar to
 
 The structured nature of this hopefully also demonstrates how an abstract data structure of arbitrary depth could be turned into a visual component. :smile:
 
-### References
+## References
 
-## Design Systems
+### Design Systems
 - [Inclusive Components](https://inclusive-components.design/). The strictest accessibility component designer I know of.(Best)
 - [Odyssey](https://odyssey.okta.design/). Native HTML/CSS. (Good).
 - [Carbon](https://www.carbondesignsystem.com/components/). Nice looking and usually simple and practical. Vanilla version is quite good.
@@ -143,9 +143,12 @@ The structured nature of this hopefully also demonstrates how an abstract data s
 - [Creating Usability With Motion](https://medium.com/ux-in-motion/creating-usability-with-motion-the-ux-in-motion-manifesto-a87a4584ddc)
 - [App Animations](www.appanimations.com)
 
-## Accessibility
+### Accessibility
 - [Harvard](https://accessibility.huit.harvard.edu/)
 - [JavaScript Requirements For Accessible Components][Javascript Requirements]
+
+### Motivation
+- [The cost of interoperability][even death]
 
 [Javascript Requirements]: https://www.smashingmagazine.com/2021/06/css-javascript-requirements-accessible-components/ "JavaScript Requirements For Accessible Components"
 [even death]: https://www.hcinnovationgroup.com/interoperability-hie/article/13008122/the-cost-of-interoperability "The cost of interoperability"
