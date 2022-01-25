@@ -22,7 +22,7 @@ This is a CSS framework designed to work as a standardized stylesheet which enha
   - Poorly connected users("developing world")
 - Standardized
 - Fast
-  - Less Javascript. Javascript may be [used sometimes][5] to improve the fluidity of animations or enhance accessibility.
+  - Less Javascript. Javascript may be [used sometimes][Javascript Requirements] to improve the fluidity of animations or enhance accessibility.
   - Pure CSS where possible
 - Traditional Modular HTML / CSS structure.
   - HTML represents State
@@ -145,4 +145,5 @@ The structured nature of this hopefully also demonstrates how an abstract data s
 
 ## Accessibility
 - [Harvard](https://accessibility.huit.harvard.edu/)
-[5]: https://www.smashingmagazine.com/2021/06/css-javascript-requirements-accessible-components/ "JavaScript Requirements For Accessible Components"
+
+[Javascript Requirements]: https://www.smashingmagazine.com/2021/06/css-javascript-requirements-accessible-components/ "JavaScript Requirements For Accessible Components"
