@@ -55,48 +55,48 @@ More than likely, to understand you probably just need to see how it is used.
 ## Contents and Roadmap
 
 1. Design Tokens
-  [x] Typography
-  [x] Color
-  [ ] Media
-  [ ] Effects
-  [ ]
+  - [x] Typography
+  - [x] Color
+  - [ ] Media
+  - [ ] Effects
+  - [ ]
 
 2. Elements
-  [x] Button
-  [ ] Code
-  [ ] Input. Should be able to pass it a JSON Schema and an input field is created.
-    [ ] Text
-    [ ] Various Types
-    [ ] Combo box (select, multiple)
-    [ ] Checkbox
-    [ ] File
-    [ ] Search
-    [ ] Select (with optgroup)
-    [ ] Slider
-  [/] Link
-  [ ] List
-  [ ] Tag
-  [ ] Title
+  - [x] Button
+  - [ ] Code
+  - [ ] Input. Should be able to pass it a JSON Schema and an input field is created.
+    - [ ] Text
+    - [ ] Various Types
+    - [ ] Combo box (select, multiple)
+    - [ ] Checkbox
+    - [ ] File
+    - [ ] Search
+    - [ ] Select (with optgroup)
+    - [ ] Slider
+  - [/] Link
+  - [ ] List
+  - [ ] Tag
+  - [ ] Title
 
 3. Components
-  [ ] Accordion
-  [ ] Breadcrumb
-  [ ] Card(Tile)
-  [ ] Form. Should be able to pass it a JSON Schema and an input field is created.
-  [ ] Notification
-  [ ] Pagination
-  [ ] Table
-  [ ] Tabs
-  [ ] Tooltip(Can be seen as a more advanced "title" attribute). Should probably be inline, for accessibility reasons
-  [ ] Various Schema.org or other Objects
+  - [ ] Accordion
+  - [ ] Breadcrumb
+  - [ ] Card(Tile)
+  - [ ] Form. Should be able to pass it a JSON Schema and an input field is created.
+  - [ ] Notification
+  - [ ] Pagination
+  - [ ] Table
+  - [ ] Tabs
+  - [ ] Tooltip(Can be seen as a more advanced "title" attribute). Should probably be inline, for accessibility reasons
+  - [ ] Various Schema.org or other Objects
 
 4. Patterns
-  [ ] Footer
-  [ ] Grid
-  [ ] Modal
-  [ ] Header
-  [ ] Hero
-  [ ] Navbar
+  - [ ] Footer
+  - [ ] Grid
+  - [ ] Modal
+  - [ ] Header
+  - [ ] Hero
+  - [ ] Navbar
 
 
 ## Dimensionality and UX
@@ -145,5 +145,4 @@ The structured nature of this hopefully also demonstrates how an abstract data s
 
 ## Accessibility
 - [Harvard](https://accessibility.huit.harvard.edu/)
-- [JavaScript Requirements For Accessible Components][5]
 [5]: https://www.smashingmagazine.com/2021/06/css-javascript-requirements-accessible-components/ "JavaScript Requirements For Accessible Components"
