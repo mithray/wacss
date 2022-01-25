@@ -1,0 +1,571 @@
+:root {
+  --ui-sharpness: .8;
+  --ui-border-radius: calc( 1em * calc(1 - var(--ui-sharpness)));
+  --ui-animation-time: calc( 1000ms * calc(1 - var(--ui-sharpness)) );
+  --ui-color-focus: rgba(80 60 240 / .7);
+  --ui-color-selection: var(--c18);
+}
+
+/*************
+
+  Typography 
+
+ *************/
+:root {
+  /***************************************
+   * Colors - Palette
+   ***************************************/
+  --palette-angle: 15deg;
+  --palette-saturation: 80%;
+  --palette-saturation-max: 90%;
+  --palette-saturation-step: -3%;
+  --palette-lightness: 50%;
+  --palette-lightness-max: 95%;
+  --palette-lightness-step: 7%;
+  --c1-h: var(--c-capri-h);
+  --c1: hsl(var(--c1-h), var(--palette-saturation), var(--palette-lightness));
+  --c2-h: calc( var(--c2-h) + 1 * var(--palette-angle) );
+  --c2: hsl(var(--c2-h), var(--palette-saturation), var(--palette-lightness));
+  --c3-h: calc( var(--c3-h) - 1 * var(--palette-angle) );
+  --c3: hsl(var(--c3-h), var(--palette-saturation), var(--palette-lightness));
+  --c4-h: calc( var(--c4-h) + 2 * var(--palette-angle) );
+  --c4: hsl(var(--c4-h), var(--palette-saturation), var(--palette-lightness));
+  --c10-h: calc( var( --c1-h ) + 1deg);
+  --c10-s: calc( var(--palette-saturation-max) + 0 * var(--palette-saturation-step));
+  --c10-l: calc( var(--palette-lightness-max) - 9 * var(--palette-lightness-step));
+  --c10: hsl( var(--c10-h), var(--c10-s), var(--c10-l));
+  --c10-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c10-l) - 50%) * -1000 )));
+  --c11-h: calc( var( --c1-h ) + 1deg);
+  --c11-s: calc( var(--palette-saturation-max) + 1 * var(--palette-saturation-step));
+  --c11-l: calc( var(--palette-lightness-max) - 8 * var(--palette-lightness-step));
+  --c11: hsl( var(--c11-h), var(--c11-s), var(--c11-l));
+  --c11-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c11-l) - 50%) * -1000 )));
+  --c12-h: calc( var( --c1-h ) + 1deg);
+  --c12-s: calc( var(--palette-saturation-max) + 2 * var(--palette-saturation-step));
+  --c12-l: calc( var(--palette-lightness-max) - 7 * var(--palette-lightness-step));
+  --c12: hsl( var(--c12-h), var(--c12-s), var(--c12-l));
+  --c12-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c12-l) - 50%) * -1000 )));
+  --c13-h: calc( var( --c1-h ) + 1deg);
+  --c13-s: calc( var(--palette-saturation-max) + 3 * var(--palette-saturation-step));
+  --c13-l: calc( var(--palette-lightness-max) - 6 * var(--palette-lightness-step));
+  --c13: hsl( var(--c13-h), var(--c13-s), var(--c13-l));
+  --c13-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c13-l) - 50%) * -1000 )));
+  --c14-h: calc( var( --c1-h ) + 1deg);
+  --c14-s: calc( var(--palette-saturation-max) + 4 * var(--palette-saturation-step));
+  --c14-l: calc( var(--palette-lightness-max) - 5 * var(--palette-lightness-step));
+  --c14: hsl( var(--c14-h), var(--c14-s), var(--c14-l));
+  --c14-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c14-l) - 50%) * -1000 )));
+  --c15-h: calc( var( --c1-h ) + 1deg);
+  --c15-s: calc( var(--palette-saturation-max) + 5 * var(--palette-saturation-step));
+  --c15-l: calc( var(--palette-lightness-max) - 4 * var(--palette-lightness-step));
+  --c15: hsl( var(--c15-h), var(--c15-s), var(--c15-l));
+  --c15-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c15-l) - 50%) * -1000 )));
+  --c16-h: calc( var( --c1-h ) + 1deg);
+  --c16-s: calc( var(--palette-saturation-max) + 6 * var(--palette-saturation-step));
+  --c16-l: calc( var(--palette-lightness-max) - 3 * var(--palette-lightness-step));
+  --c16: hsl( var(--c16-h), var(--c16-s), var(--c16-l));
+  --c16-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c16-l) - 50%) * -1000 )));
+  --c17-h: calc( var( --c1-h ) + 1deg);
+  --c17-s: calc( var(--palette-saturation-max) + 7 * var(--palette-saturation-step));
+  --c17-l: calc( var(--palette-lightness-max) - 2 * var(--palette-lightness-step));
+  --c17: hsl( var(--c17-h), var(--c17-s), var(--c17-l));
+  --c17-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c17-l) - 50%) * -1000 )));
+  --c18-h: calc( var( --c1-h ) + 1deg);
+  --c18-s: calc( var(--palette-saturation-max) + 8 * var(--palette-saturation-step));
+  --c18-l: calc( var(--palette-lightness-max) - 1 * var(--palette-lightness-step));
+  --c18: hsl( var(--c18-h), var(--c18-s), var(--c18-l));
+  --c18-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c18-l) - 50%) * -1000 )));
+  --c19-h: calc( var( --c1-h ) + 1deg);
+  --c19-s: calc( var(--palette-saturation-max) + 9 * var(--palette-saturation-step));
+  --c19-l: calc( var(--palette-lightness-max) - 0 * var(--palette-lightness-step));
+  --c19: hsl( var(--c19-h), var(--c19-s), var(--c19-l));
+  --c19-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c19-l) - 50%) * -1000 )));
+  --c20-h: calc( var( --c2-h ) + 1deg);
+  --c20-s: calc( var(--palette-saturation-max) + 0 * var(--palette-saturation-step));
+  --c20-l: calc( var(--palette-lightness-max) - 9 * var(--palette-lightness-step));
+  --c20: hsl( var(--c20-h), var(--c20-s), var(--c20-l));
+  --c20-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c20-l) - 50%) * -1000 )));
+  --c21-h: calc( var( --c2-h ) + 1deg);
+  --c21-s: calc( var(--palette-saturation-max) + 1 * var(--palette-saturation-step));
+  --c21-l: calc( var(--palette-lightness-max) - 8 * var(--palette-lightness-step));
+  --c21: hsl( var(--c21-h), var(--c21-s), var(--c21-l));
+  --c21-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c21-l) - 50%) * -1000 )));
+  --c22-h: calc( var( --c2-h ) + 1deg);
+  --c22-s: calc( var(--palette-saturation-max) + 2 * var(--palette-saturation-step));
+  --c22-l: calc( var(--palette-lightness-max) - 7 * var(--palette-lightness-step));
+  --c22: hsl( var(--c22-h), var(--c22-s), var(--c22-l));
+  --c22-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c22-l) - 50%) * -1000 )));
+  --c23-h: calc( var( --c2-h ) + 1deg);
+  --c23-s: calc( var(--palette-saturation-max) + 3 * var(--palette-saturation-step));
+  --c23-l: calc( var(--palette-lightness-max) - 6 * var(--palette-lightness-step));
+  --c23: hsl( var(--c23-h), var(--c23-s), var(--c23-l));
+  --c23-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c23-l) - 50%) * -1000 )));
+  --c24-h: calc( var( --c2-h ) + 1deg);
+  --c24-s: calc( var(--palette-saturation-max) + 4 * var(--palette-saturation-step));
+  --c24-l: calc( var(--palette-lightness-max) - 5 * var(--palette-lightness-step));
+  --c24: hsl( var(--c24-h), var(--c24-s), var(--c24-l));
+  --c24-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c24-l) - 50%) * -1000 )));
+  --c25-h: calc( var( --c2-h ) + 1deg);
+  --c25-s: calc( var(--palette-saturation-max) + 5 * var(--palette-saturation-step));
+  --c25-l: calc( var(--palette-lightness-max) - 4 * var(--palette-lightness-step));
+  --c25: hsl( var(--c25-h), var(--c25-s), var(--c25-l));
+  --c25-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c25-l) - 50%) * -1000 )));
+  --c26-h: calc( var( --c2-h ) + 1deg);
+  --c26-s: calc( var(--palette-saturation-max) + 6 * var(--palette-saturation-step));
+  --c26-l: calc( var(--palette-lightness-max) - 3 * var(--palette-lightness-step));
+  --c26: hsl( var(--c26-h), var(--c26-s), var(--c26-l));
+  --c26-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c26-l) - 50%) * -1000 )));
+  --c27-h: calc( var( --c2-h ) + 1deg);
+  --c27-s: calc( var(--palette-saturation-max) + 7 * var(--palette-saturation-step));
+  --c27-l: calc( var(--palette-lightness-max) - 2 * var(--palette-lightness-step));
+  --c27: hsl( var(--c27-h), var(--c27-s), var(--c27-l));
+  --c27-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c27-l) - 50%) * -1000 )));
+  --c28-h: calc( var( --c2-h ) + 1deg);
+  --c28-s: calc( var(--palette-saturation-max) + 8 * var(--palette-saturation-step));
+  --c28-l: calc( var(--palette-lightness-max) - 1 * var(--palette-lightness-step));
+  --c28: hsl( var(--c28-h), var(--c28-s), var(--c28-l));
+  --c28-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c28-l) - 50%) * -1000 )));
+  --c29-h: calc( var( --c2-h ) + 1deg);
+  --c29-s: calc( var(--palette-saturation-max) + 9 * var(--palette-saturation-step));
+  --c29-l: calc( var(--palette-lightness-max) - 0 * var(--palette-lightness-step));
+  --c29: hsl( var(--c29-h), var(--c29-s), var(--c29-l));
+  --c29-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c29-l) - 50%) * -1000 )));
+  --c30-h: calc( var( --c3-h ) + 1deg);
+  --c30-s: calc( var(--palette-saturation-max) + 0 * var(--palette-saturation-step));
+  --c30-l: calc( var(--palette-lightness-max) - 9 * var(--palette-lightness-step));
+  --c30: hsl( var(--c30-h), var(--c30-s), var(--c30-l));
+  --c30-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c30-l) - 50%) * -1000 )));
+  --c31-h: calc( var( --c3-h ) + 1deg);
+  --c31-s: calc( var(--palette-saturation-max) + 1 * var(--palette-saturation-step));
+  --c31-l: calc( var(--palette-lightness-max) - 8 * var(--palette-lightness-step));
+  --c31: hsl( var(--c31-h), var(--c31-s), var(--c31-l));
+  --c31-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c31-l) - 50%) * -1000 )));
+  --c32-h: calc( var( --c3-h ) + 1deg);
+  --c32-s: calc( var(--palette-saturation-max) + 2 * var(--palette-saturation-step));
+  --c32-l: calc( var(--palette-lightness-max) - 7 * var(--palette-lightness-step));
+  --c32: hsl( var(--c32-h), var(--c32-s), var(--c32-l));
+  --c32-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c32-l) - 50%) * -1000 )));
+  --c33-h: calc( var( --c3-h ) + 1deg);
+  --c33-s: calc( var(--palette-saturation-max) + 3 * var(--palette-saturation-step));
+  --c33-l: calc( var(--palette-lightness-max) - 6 * var(--palette-lightness-step));
+  --c33: hsl( var(--c33-h), var(--c33-s), var(--c33-l));
+  --c33-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c33-l) - 50%) * -1000 )));
+  --c34-h: calc( var( --c3-h ) + 1deg);
+  --c34-s: calc( var(--palette-saturation-max) + 4 * var(--palette-saturation-step));
+  --c34-l: calc( var(--palette-lightness-max) - 5 * var(--palette-lightness-step));
+  --c34: hsl( var(--c34-h), var(--c34-s), var(--c34-l));
+  --c34-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c34-l) - 50%) * -1000 )));
+  --c35-h: calc( var( --c3-h ) + 1deg);
+  --c35-s: calc( var(--palette-saturation-max) + 5 * var(--palette-saturation-step));
+  --c35-l: calc( var(--palette-lightness-max) - 4 * var(--palette-lightness-step));
+  --c35: hsl( var(--c35-h), var(--c35-s), var(--c35-l));
+  --c35-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c35-l) - 50%) * -1000 )));
+  --c36-h: calc( var( --c3-h ) + 1deg);
+  --c36-s: calc( var(--palette-saturation-max) + 6 * var(--palette-saturation-step));
+  --c36-l: calc( var(--palette-lightness-max) - 3 * var(--palette-lightness-step));
+  --c36: hsl( var(--c36-h), var(--c36-s), var(--c36-l));
+  --c36-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c36-l) - 50%) * -1000 )));
+  --c37-h: calc( var( --c3-h ) + 1deg);
+  --c37-s: calc( var(--palette-saturation-max) + 7 * var(--palette-saturation-step));
+  --c37-l: calc( var(--palette-lightness-max) - 2 * var(--palette-lightness-step));
+  --c37: hsl( var(--c37-h), var(--c37-s), var(--c37-l));
+  --c37-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c37-l) - 50%) * -1000 )));
+  --c38-h: calc( var( --c3-h ) + 1deg);
+  --c38-s: calc( var(--palette-saturation-max) + 8 * var(--palette-saturation-step));
+  --c38-l: calc( var(--palette-lightness-max) - 1 * var(--palette-lightness-step));
+  --c38: hsl( var(--c38-h), var(--c38-s), var(--c38-l));
+  --c38-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c38-l) - 50%) * -1000 )));
+  --c39-h: calc( var( --c3-h ) + 1deg);
+  --c39-s: calc( var(--palette-saturation-max) + 9 * var(--palette-saturation-step));
+  --c39-l: calc( var(--palette-lightness-max) - 0 * var(--palette-lightness-step));
+  --c39: hsl( var(--c39-h), var(--c39-s), var(--c39-l));
+  --c39-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c39-l) - 50%) * -1000 )));
+  --c40-h: calc( var( --c4-h ) + 1deg);
+  --c40-s: calc( var(--palette-saturation-max) + 0 * var(--palette-saturation-step));
+  --c40-l: calc( var(--palette-lightness-max) - 9 * var(--palette-lightness-step));
+  --c40: hsl( var(--c40-h), var(--c40-s), var(--c40-l));
+  --c40-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c40-l) - 50%) * -1000 )));
+  --c41-h: calc( var( --c4-h ) + 1deg);
+  --c41-s: calc( var(--palette-saturation-max) + 1 * var(--palette-saturation-step));
+  --c41-l: calc( var(--palette-lightness-max) - 8 * var(--palette-lightness-step));
+  --c41: hsl( var(--c41-h), var(--c41-s), var(--c41-l));
+  --c41-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c41-l) - 50%) * -1000 )));
+  --c42-h: calc( var( --c4-h ) + 1deg);
+  --c42-s: calc( var(--palette-saturation-max) + 2 * var(--palette-saturation-step));
+  --c42-l: calc( var(--palette-lightness-max) - 7 * var(--palette-lightness-step));
+  --c42: hsl( var(--c42-h), var(--c42-s), var(--c42-l));
+  --c42-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c42-l) - 50%) * -1000 )));
+  --c43-h: calc( var( --c4-h ) + 1deg);
+  --c43-s: calc( var(--palette-saturation-max) + 3 * var(--palette-saturation-step));
+  --c43-l: calc( var(--palette-lightness-max) - 6 * var(--palette-lightness-step));
+  --c43: hsl( var(--c43-h), var(--c43-s), var(--c43-l));
+  --c43-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c43-l) - 50%) * -1000 )));
+  --c44-h: calc( var( --c4-h ) + 1deg);
+  --c44-s: calc( var(--palette-saturation-max) + 4 * var(--palette-saturation-step));
+  --c44-l: calc( var(--palette-lightness-max) - 5 * var(--palette-lightness-step));
+  --c44: hsl( var(--c44-h), var(--c44-s), var(--c44-l));
+  --c44-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c44-l) - 50%) * -1000 )));
+  --c45-h: calc( var( --c4-h ) + 1deg);
+  --c45-s: calc( var(--palette-saturation-max) + 5 * var(--palette-saturation-step));
+  --c45-l: calc( var(--palette-lightness-max) - 4 * var(--palette-lightness-step));
+  --c45: hsl( var(--c45-h), var(--c45-s), var(--c45-l));
+  --c45-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c45-l) - 50%) * -1000 )));
+  --c46-h: calc( var( --c4-h ) + 1deg);
+  --c46-s: calc( var(--palette-saturation-max) + 6 * var(--palette-saturation-step));
+  --c46-l: calc( var(--palette-lightness-max) - 3 * var(--palette-lightness-step));
+  --c46: hsl( var(--c46-h), var(--c46-s), var(--c46-l));
+  --c46-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c46-l) - 50%) * -1000 )));
+  --c47-h: calc( var( --c4-h ) + 1deg);
+  --c47-s: calc( var(--palette-saturation-max) + 7 * var(--palette-saturation-step));
+  --c47-l: calc( var(--palette-lightness-max) - 2 * var(--palette-lightness-step));
+  --c47: hsl( var(--c47-h), var(--c47-s), var(--c47-l));
+  --c47-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c47-l) - 50%) * -1000 )));
+  --c48-h: calc( var( --c4-h ) + 1deg);
+  --c48-s: calc( var(--palette-saturation-max) + 8 * var(--palette-saturation-step));
+  --c48-l: calc( var(--palette-lightness-max) - 1 * var(--palette-lightness-step));
+  --c48: hsl( var(--c48-h), var(--c48-s), var(--c48-l));
+  --c48-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c48-l) - 50%) * -1000 )));
+  --c49-h: calc( var( --c4-h ) + 1deg);
+  --c49-s: calc( var(--palette-saturation-max) + 9 * var(--palette-saturation-step));
+  --c49-l: calc( var(--palette-lightness-max) - 0 * var(--palette-lightness-step));
+  --c49: hsl( var(--c49-h), var(--c49-s), var(--c49-l));
+  --c49-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c49-l) - 50%) * -1000 )));
+  --c-glass-gradient: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgba(223, 233, 243,.97) 100%);
+  /***************************************
+   * Colors - Generic
+   ***************************************/
+  --c-red-h: 0deg;
+  --c-red: hsl( var(--red), var(--palette-saturation), var(--palette-lightness) );
+  --c-scarlet-h: 7.5deg;
+  --c-scarlet: hsl( var(--scarlet), var(--palette-saturation), var(--palette-lightness) );
+  --c-vermillion-h: 15deg;
+  --c-vermillion: hsl( var(--vermillion), var(--palette-saturation), var(--palette-lightness) );
+  --c-permisson-h: 22.5deg;
+  --c-permisson: hsl( var(--permisson), var(--palette-saturation), var(--palette-lightness) );
+  --c-orange-h: 30deg;
+  --c-orange: hsl( var(--orange), var(--palette-saturation), var(--palette-lightness) );
+  --c-orange-peel-h: 37.5deg;
+  --c-orange-peel: hsl( var(--orange-peel), var(--palette-saturation), var(--palette-lightness) );
+  --c-amber-h: 45deg;
+  --c-amber: hsl( var(--amber), var(--palette-saturation), var(--palette-lightness) );
+  --c-golden-yellow-h: 52.5deg;
+  --c-golden-yellow: hsl( var(--golden-yellow), var(--palette-saturation), var(--palette-lightness) );
+  --c-yellow-h: 60deg;
+  --c-yellow: hsl( var(--yellow), var(--palette-saturation), var(--palette-lightness) );
+  --c-lemon-h: 67.5deg;
+  --c-lemon: hsl( var(--lemon), var(--palette-saturation), var(--palette-lightness) );
+  --c-lime-h: 75deg;
+  --c-lime: hsl( var(--lime), var(--palette-saturation), var(--palette-lightness) );
+  --c-spring-bud-h: 82.5deg;
+  --c-spring-bud: hsl( var(--spring-bud), var(--palette-saturation), var(--palette-lightness) );
+  --c-chartreuse-h: 90deg;
+  --c-chartreuse: hsl( var(--chartreuse), var(--palette-saturation), var(--palette-lightness) );
+  --c-bright-green-h: 97.5deg;
+  --c-bright-green: hsl( var(--bright-green), var(--palette-saturation), var(--palette-lightness) );
+  --c-harlequin-h: 105deg;
+  --c-harlequin: hsl( var(--harlequin), var(--palette-saturation), var(--palette-lightness) );
+  --c-neon-green-h: 112.5deg;
+  --c-neon-green: hsl( var(--neon-green), var(--palette-saturation), var(--palette-lightness) );
+  --c-green-h: 120deg;
+  --c-green: hsl( var(--green), var(--palette-saturation), var(--palette-lightness) );
+  --c-jade-h: 127.5deg;
+  --c-jade: hsl( var(--jade), var(--palette-saturation), var(--palette-lightness) );
+  --c-erin-h: 135deg;
+  --c-erin: hsl( var(--erin), var(--palette-saturation), var(--palette-lightness) );
+  --c-emerald-h: 142.5deg;
+  --c-emerald: hsl( var(--emerald), var(--palette-saturation), var(--palette-lightness) );
+  --c-spring-green-h: 150deg;
+  --c-spring-green: hsl( var(--spring-green), var(--palette-saturation), var(--palette-lightness) );
+  --c-maxt-h: 157.5deg;
+  --c-maxt: hsl( var(--maxt), var(--palette-saturation), var(--palette-lightness) );
+  --c-aquamarine-h: 165deg;
+  --c-aquamarine: hsl( var(--aquamarine), var(--palette-saturation), var(--palette-lightness) );
+  --c-turqouise-h: 172.5deg;
+  --c-turqouise: hsl( var(--turqouise), var(--palette-saturation), var(--palette-lightness) );
+  --c-cyan-h: 180deg;
+  --c-cyan: hsl( var(--cyan), var(--palette-saturation), var(--palette-lightness) );
+  --c-sky-blue-h: 187.5deg;
+  --c-sky-blue: hsl( var(--sky-blue), var(--palette-saturation), var(--palette-lightness) );
+  --c-capri-h: 195deg;
+  --c-capri: hsl( var(--capri), var(--palette-saturation), var(--palette-lightness) );
+  --c-cornflower-h: 202.5deg;
+  --c-cornflower: hsl( var(--cornflower), var(--palette-saturation), var(--palette-lightness) );
+  --c-azure-h: 210deg;
+  --c-azure: hsl( var(--azure), var(--palette-saturation), var(--palette-lightness) );
+  --c-cobalt-h: 217.5deg;
+  --c-cobalt: hsl( var(--cobalt), var(--palette-saturation), var(--palette-lightness) );
+  --c-cerulean-h: 225deg;
+  --c-cerulean: hsl( var(--cerulean), var(--palette-saturation), var(--palette-lightness) );
+  --c-sapphire-h: 232.5deg;
+  --c-sapphire: hsl( var(--sapphire), var(--palette-saturation), var(--palette-lightness) );
+  --c-blue-h: 240deg;
+  --c-blue: hsl( var(--blue), var(--palette-saturation), var(--palette-lightness) );
+  --c-iris-h: 247.5deg;
+  --c-iris: hsl( var(--iris), var(--palette-saturation), var(--palette-lightness) );
+  --c-indigo-h: 255deg;
+  --c-indigo: hsl( var(--indigo), var(--palette-saturation), var(--palette-lightness) );
+  --c-veronica-h: 262.5deg;
+  --c-veronica: hsl( var(--veronica), var(--palette-saturation), var(--palette-lightness) );
+  --c-violet-h: 270deg;
+  --c-violet: hsl( var(--violet), var(--palette-saturation), var(--palette-lightness) );
+  --c-amethyst-h: 277.5deg;
+  --c-amethyst: hsl( var(--amethyst), var(--palette-saturation), var(--palette-lightness) );
+  --c-purple-h: 285deg;
+  --c-purple: hsl( var(--purple), var(--palette-saturation), var(--palette-lightness) );
+  --c-phlox-h: 292.5deg;
+  --c-phlox: hsl( var(--phlox), var(--palette-saturation), var(--palette-lightness) );
+  --c-magenta-h: 300deg;
+  --c-magenta: hsl( var(--magenta), var(--palette-saturation), var(--palette-lightness) );
+  --c-fuchsia-h: 307.5deg;
+  --c-fuchsia: hsl( var(--fuchsia), var(--palette-saturation), var(--palette-lightness) );
+  --c-cerise-h: 315deg;
+  --c-cerise: hsl( var(--cerise), var(--palette-saturation), var(--palette-lightness) );
+  --c-deep-pink-h: 322.5deg;
+  --c-deep-pink: hsl( var(--deep-pink), var(--palette-saturation), var(--palette-lightness) );
+  --c-rose-h: 330deg;
+  --c-rose: hsl( var(--rose), var(--palette-saturation), var(--palette-lightness) );
+  --c-raspberry-h: 337.5deg;
+  --c-raspberry: hsl( var(--raspberry), var(--palette-saturation), var(--palette-lightness) );
+  --c-crimson-h: 345deg;
+  --c-crimson: hsl( var(--crimson), var(--palette-saturation), var(--palette-lightness) );
+  --c-amaranth-h: 352.5deg;
+  --c-amaranth: hsl( var(--amaranth), var(--palette-saturation), var(--palette-lightness) );
+  --color-insert: #cfc;
+  --color-delete: #fbb;
+  --color-warn: #ffb;
+  --color-error: #fbb;
+  --color-success: #bfb;
+}
+
+* {
+  --color-background-h: 240deg;
+  --color-background-s: 70%;
+  --color-background-l: 20%;
+  --color-background-o: 1;
+  --color-font-h: var(--color-background-h);
+  --color-font-s: calc( 100% - var(--color-background-s) );
+  --color-font-l: clamp(0%,100%,calc( calc(var(--color-background-l) - 50%) * -1000 ));
+  --color-font-o: .8;
+  background: hsla(var(--color-background-h) var(--color-background-s) var(--color-background-l)/var(--color-background-o));
+  color: hsla(var(--color-font-h) var(--color-font-s) var(--color-font-l)/var(--color-font-o));
+}
+
+/*****************************
+ * Abbreviations
+ *****************************/
+:root {
+  --ratio-perfect-unison: 1;
+  --ratio-minor-second: 1.0625;
+  --ratio-major-second: 1.125;
+  --ratio-minor-third: 1.1875;
+  --ratio-major-third: 1.25;
+  --ratio-perfect-fourth: 1.3333333333;
+  --ratio-augmented-fourth: 1.4166666667;
+  --ratio-diminished-fifth: 1.4166666667;
+  --ratio-perfect-fifth: 1.5;
+  --ratio-minor-sixth: 1.5833333333;
+  --ratio-major-sixth: 1.6666666667;
+  --ratio-minor-seventh: 1.7777777778;
+  --ratio-major-seventh: 1.875;
+  --ratio-perfect-octave: 2;
+  --ratio-golden: 1.6180339887;
+}
+
+/*******************************
+ * Modes
+ *******************************/
+/*
+@function get-scale( $octaves: 3, $mode: $ionic, $scale-number-of-points: 6){
+  $all-scale-points: ();
+	@for $i from 1 through $octaves {
+	  @for $j from 1 through length($mode) {
+      $all-scale-points: join($all-scale-points, nth($mode,$j) * $j);
+    }
+  }
+  @return $all-scale-points;
+}
+*/
+:root {
+  --font-serif: Freight Text Pro,-apple-system-ui-serif, ui-serif,Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
+  --font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-monospace: IBM Plex Mono, SFMono-Regular, Consolas, Menlo, Andale, monospace;
+  --font-family-body: var(--font-serif);
+  --font-family-headings: var(--font-serif);
+  --font-family-code: var(--font-monospace);
+  --font-size: calc( .7em + 1.1vw );
+  --line-height: var(--ratio-golden);
+  --type-scale: var(--ratio-minor-second);
+  --font-color-headings: hsla(120 90% 10% / .7);
+  --font-color-body: hsla(0 0% 0% / .7);
+  --font-scale-1: calc( 1 / var(--type-scale) / var(--type-scale) );
+  --font-scale-2: calc( var(--font-scale-1) * var(--type-scale) );
+  --font-scale-3: calc( var(--font-scale-2) * var(--type-scale) );
+  --font-scale-4: calc( var(--font-scale-3) * var(--type-scale) );
+  --font-scale-5: calc( var(--font-scale-4) * var(--type-scale) );
+  --font-scale-6: calc( var(--font-scale-5) * var(--type-scale) );
+  --font-scale-7: calc( var(--font-scale-6) * var(--type-scale) );
+  --font-scale-8: calc( var(--font-scale-7) * var(--type-scale) );
+  --font-scale-9: calc( var(--font-scale-8) * var(--type-scale) );
+}
+
+html {
+  font-size: var(--font-size);
+  font-family: var(--font-family-body);
+  line-height: var(--line-height);
+  color: var(--font-color-body);
+}
+
+h1, h2, h3, h4, h5, h6, legend, header {
+  font-family: var(--font-family-headings);
+  color: var(--font-color-headings);
+}
+
+h1 {
+  font-size: calc(1em * var(--font-scale-6));
+}
+
+h2 {
+  font-size: calc(1em * var(--font-scale-5));
+}
+
+h3 {
+  font-size: calc(1em * var(--font-scale-4));
+}
+
+h4 {
+  font-size: calc(1em * var(--font-scale-3));
+}
+
+h5 {
+  font-size: calc(1em * var(--font-scale-2));
+}
+
+h6 {
+  font-size: calc(1em * var(--font-scale-1));
+}
+
+@media screen and (min-width: 0px) {
+  :root {
+    --type-scale: var(--ratio-minor-second);
+  }
+}
+@media screen and (min-width: 300px) {
+  :root {
+    --type-scale: var(--ratio-major-second);
+  }
+}
+@media screen and (min-width: 600px) {
+  :root {
+    --type-scale: var(--ratio-minor-third);
+  }
+}
+@media screen and (min-width: 1200px) {
+  :root {
+    --type-scale: var(--ratio-major-third);
+  }
+}
+@media screen and (min-width: 1800px) {
+  :root {
+    --type-scale: var(--ratio-perfect-fourth);
+  }
+}
+
+:root {
+  --icon-uri-link: "url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAACCUlEQVRIie2UvWuTURTGn3vzhlYDMQFxECFDh6YgL6Rb/wFxTwmldJS6OGTRNFugUq5WSEE3cQwhtPgHuKYaB9NFCdriUsSC0g4pEYokP4fmfa2vUj+KWx44cDnPuYfzLY0wwllhogrAl3RN0sUI9cEY82hoc0vSlQj/WdIzY8zrk0rvhOMLkp7s7OzkNzY2tLu7q8FgEBpWKhUBTyVpb2/vYaVSCTlrrTKZjGZnZwWsS7phjOmejHoceLmysoLneUj6STqdDkAGyHQ6nV/aeJ6Hcw6gBYyFJQJKtVrNLSwsKJlMqlwuK5fLKRaLhUHMzMx8SSQSlyWp1+t9bLVa5wOu3+9ra2tLzjl1u13V63XNzc2VjDH3gwy2JycnsdayubkJUAWW+RFd4P1QuhHuLlBtNptYa8lmswDvAufn9vf3kYTv+wCvhvpqsVgknU6fKsViEaA6/NP2fR9JHBwcDIBxG52i/wJgO5vNYq2l2WwCrA3T/tMSLQNrQYmmpqYA3krfm3ynXq/fm5+fVzKZ1NLSkqanp/+qye12W845HR4eqtFoqFAo3DbGPAgyGANeOOfONKbxeJzV1VWA58GYepJkjDkCrpdKpcf5fL4QLFq/3w8zSKVSkvQ1eC8uLoZcLBYLFo2JiYmGpJvGmKOwRJF+XNXxqbgUoX53Kj7p+FS8OaXdI4zwD/gGVFCiWYbGyuwAAAAASUVORK5CYII=")";
+  --icon-uri-link-external: "url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAACZ0lEQVRIidVUv0sbYRh+3hBsop4Br2QuHURMWpASRDhuCHGx5Rw7dCv0D9BFh44dburqUOnW/gESLorQQBSDEJdSb4p7KQb0cp8Nanw6NAfhvMuP0Re+4fueX+/3fvABj70kfEByGsALAFMxmrMe9iwG/y0iv4JNMmT+Rin1rdFozNze3kaqS6XSH6VUpl6vP4nCFxcXSTIvIm6486l2u321sLBAALGLJF3XjcUrlQpJmlE3yDUajRnXdVEoFFAsFmMmgDtd15Obm5sAAKUUtre30e12I8n9AalOpwMAMAwDtm3XAdQiNMfZbDZr2/ZbpVRpdXUV3W4XiUQC9/f3AwPC9UNEPkYBJJd83/9sWRZqtRoMw8D8/Dx2dnYecBMDAiKL5Cvf9/cty9Kq1SoMw4DjONA0LZI/VkCv86plWZnAvFwutzVN2x9FbFYqFQLg+vo6SX4Km3ue55mmSQA0TZOe53kkl0i+v7i44Pn5OZVSHZLPA92gNwh3frC2tqYFM9/d3W1rmrYiIicks7qu3+m6ngRwBeA60A4dUWDeP/NyudzOZDIrInLSoy1tbGwkRQR7e3tZAHMjBZCcG8F8YA27wdNWqzXVbDZhmiYcxxnLHBjyBiJyTPLD4eHhl9nZWRXMfFTzoQG9kK8kzwC0RKQ5jvmwgCJJu/+AZBzXjAP6AzqpVAoAcHR0hK2trWUAy6P1+V8DAOl0GgD+PiAE33Uulxv4XQ9a+Xyevu9fkpwMfCUU8lop9f309HTm5uZm1OYBABMTEygUCpfpdPqdiDiRAb2QSQAvAUyPlQD4AH6KyPVQ5qOqfy3JVlZxVKqAAAAAAElFTkSuQmCC")";
+  --icon-uri-contract: "url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAfElEQVRIie3QMQoCQQyF4f8tbC2CRYo9zZxDzyB4DwvPIF5jjiPBRqwFYyUsik0qhXxVhpCXMFBK+X+aPyJiDeyARTLvChwkHT8WRMTK3c+ttdHdU+lmRu/9bmaTpAvAMOsPX+YyHq/i/Ys2wBZYJoNvwF7SKX9bKeX3PAEINxwGsVDdFgAAAABJRU5ErkJggg==")";
+  --icon-uri-expand: "url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAACLUlEQVRIidWVT2sTYRDGfxNNSdpSg5dSJbCCUOxGL90cCsVCICf9BPoFCkWEXpKDRw97VS/5AvoN9BJIYQkI7uZiSiQgmIs9BYkma0JCGA/dxHUTShQrdmBh35lneN6Zd/7ARReJKlR1FbgNrITUn0XkQwR3C7geUvWAuoj4YdzliNN93/dfep63NhqNpnrLssaqelNEWgHO6HQ6dc/zLk0w8Xgcy7K+qeoDEXk9E4qqrnS73a9bW1sK/PI5jqOquh3CbjuOM4MzTVN7vV5HVZfnRWB6nrfWaDTIZrPkcrmpIZ1OAwxD2GE6naZQKEwVlUoF13XxPO/K3t5eBngXJUgMBgMAdnd3sW37LeAEthPgOIQ9NgzjsW3b14Lz3cPDwx3Xden3+wCJeRFEpSIiT+YZRESB55Ozqj4FduZhY2cQ/F1R1c12uz0ul8vabDZVVQ9+w/eg2WxquVzWdrs9VtXNiU0iwBvAVWDEaU3rggTCae/EgS8i8mnRy/3/8u9SdF6PHC7Tddd1Y/l8nlKpBLCxKAGwUSqVyOfzuK4bA9bnEZyLnNXJOVW1g/8T4MXkTYKcPwKmo2IRgkEicTpCqtUqxWJxh6D99/f3MQzjCKgH2Eyr1XoWpHLqA5BMJgH6M0yTcW2a5h+P60wmMzOuo2V6z/f9V7VabW04/DmdLcsap1Kp6ML5GF44S0tLZLPZTjKZfCgib+YSBM7LwB1gNaRedGW+F5HvM+m50PIDr4pI/6vRX6QAAAAASUVORK5CYII=")";
+  --icon-uri-download: "url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABmklEQVRIidWVv2rbUBTGfye0oGqJkTF0aCkIkqIpc9+gk14iU9/AULDB3IDxlEydPAnyDM1kj8EI3E2QgCHgpYgOXRTIkK+Lkjp1bYlEGXLgDPdyv+93zv3DhWcOq7tQ0nvgdTm8MbNlHd2rGsZvge9Zlh0URQGA7/tI+gF8NrOfdYvcBDjp9XoCHmS/35ek4yr9Tg3G/nQ6BSCOY+I4BmAymQB8rBJXbhFgkgAYj8cAdDodyrnKM6zTwZPi5QPWzkDSF+BwZWpvi/6TpHRlPDazb1uJkk6TJFEYhvfpeZ4A5XmuPM8FyPO8B2uSJJGk08qWJO1KOh+NRmt3fxWwmoPBQJLOJe1WAv4HabVams1mkrSUtJzP52q3248zr4I0Yv4vxDknQEEQKAgCAXLOPc18UyeNVL4J4pxrrvINkLMya5tbKd4BvgLvGqpnCRyZ2e0dYG+xWFx0u91G3IfDIWEY7pvZJSUgStN07QE9NtM0laQI/m5RpyiKqyzL3jTRQRRF177vfzCz/P7DkNQGmroZv83sV0Ne2+MPQsBPrnnbXH8AAAAASUVORK5CYII=")";
+}
+
+:focus {
+  outline: 0.3em dotted var(--ui-color-focus);
+  transition: all ease-in-out var(--ui-animation-time);
+}
+
+/*************************
+* Selection
+*************************/
+::selection {
+  --color-background-h: 220deg;
+  --color-background-s: 60%;
+  --color-background-l: 80%;
+}
+
+/*************************
+* Links
+*************************/
+:is(a[href$=".pdf"],
+a[href$=".aif"],
+a[href$=".cda"],
+a[href$=".mid"],
+a[href$=".midi"],
+a[href$=".mp3"],
+a[href$=".mp4"],
+a[href$=".mpa"],
+a[href$=".ogg"],
+a[href$=".wav"],
+a[href$=".wma"],
+a[href$=".wpl"],
+a[href$=".7z"],
+a[href$=".arj"],
+a[href$=".deb"],
+a[href$=".pkg"],
+a[href$=".rar"],
+a[href$=".pkg"],
+a[href$=".rpm"],
+a[href$=".tar"],
+a[href$=".gz"],
+a[href$=".z"],
+a[href$=".zip"]):after {
+  content: var(--icon-uri-download);
+}
+
+a:link {
+  cursor: var(--icon-uri-link-external), auto;
+  --elevation: 1;
+  --shadow-x: 0em;
+  --shadow-y: calc( var(--elevation) * .05em);
+  --shadow-blur: calc(var(--elevation) * .05em + 2px);
+  --shadow-spread: calc(.2px * var(--elevation));
+  --shadow-opacity: calc( .8 - .04 * var(--elevation) );
+  --shadow-color: rgba(0 0 0 / var(--shadow-opacity));
+  box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-blur) var(--shadow-spread) var(--shadow-color);
+  transform: translateY(-0.1em) scale(1.05);
+  filter: brightness(1.08) saturate(1.2);
+  transition: all ease-in-out calc(var(--ui-animation-time) * var(--elevation));
+  /*
+    --color-background-l: 30%; 
+  	&:visited {
+    --color-font-h: 290deg;
+    --color-font-s: 50%;
+    --color-font-l: 40%;
+    }
+  	&::selection:visited {
+  	  color: hsl(290deg,50%,40%);
+    }
+  	&::selection:hover {
+      --color-background-l: 30%;
+    }
+  */
+}
+a:link:hover {
+  --elevation: 2;
+}
+a:link:focus {
+  --elevation: 3;
+}
+
+@media print {
+  a:after {
+    content: " (" attr(href) ") ";
+    font-size: 0.8em;
+    font-weight: normal;
+  }
+
+  html, body, main {
+    background: white;
+  }
+}
+
+/*# sourceMappingURL=wacss.css.map */

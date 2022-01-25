@@ -1,8 +1,8 @@
 {
-  "name": "@mithrayls/regulacss",
-  "version": "0.0.13",
+  "name": "@mithray/mnd",
+  "version": "0.0.14",
   "description": "*Semantic, Classless, Componentized Css*",
-  "main": "index.js",
+  "main": "dist/wacss.css",
   "dependencies": {
     "sass": "^1.48.0"
   },

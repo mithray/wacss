@@ -11,16 +11,16 @@
 
   box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-blur) var(--shadow-spread) var(--shadow-color);
   transform: translateY( -.1em ) scale(1.05);
-  filter: brightness(1.08) saturate(1.2)
+  filter: brightness(1.08) saturate(1.2);
   transition: all ease-in-out calc( var( --ui-animation-time) * var(--elevation) );
 
-  @if ( variable-exists($elevation-hover) ){
+  @if ( variable-exists("elevation-hover") ) {
     &:hover {
       --elevation: #{ $elevation-hover};
     }
   }
   
-  @if ( variable-exists($elevation-focus) ){
+  @if ( variable-exists("elevation-focus") ) {
     &:focus {
       --elevation: #{ $elevation-focus};
     }

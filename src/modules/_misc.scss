@@ -1,4 +1,5 @@
 @import "icons";
+@import "elevation";
 
 :focus {
   outline: .3em dotted var(--ui-color-focus);
@@ -21,10 +22,9 @@
 *************************/
 
 // https://www.computerhope.com/issues/ch001789.htm
-is(
-
+:is( a[href$=".pdf"]
   // Audio Types
-  a[href$=".aif"]
+  ,a[href$=".aif"]
   ,a[href$=".cda"] 
   ,a[href$=".mid"] 
   ,a[href$=".midi"] 
