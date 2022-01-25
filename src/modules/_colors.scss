@@ -1,96 +1,79 @@
+// https://www.icolorpage.com/cp/colorchart-0010-twbw-colortable-colorpalette-000000-FFFFFF-block-tertiair.html
+
+
+:root {
+  
 /***************************************
- * Color 1.1: Background-Font Contrast
+ * Colors - Palette
  ***************************************/
 
-@function contrast($color)
-	@if (lightness($color) > 50 )
-		@return $color_dark
-	@else
-		@return $color_light
+  // Palette Generation Parameters
+  // Currently only useses Analogous palette. In the future, want to implement Analogous, Complimentary, Triadic, Split Complimentary
+  --palette-angle: 15deg;
+  
+  --palette-saturation: 80%; // Sets standard saturation of generic colors
+  --palette-saturation-max: 90%; //Ranges of a color start at this saturation and move down
+  --palette-saturation-step: -3%;
 
+  --palette-lightness: 50%;
+  --palette-lightness-max: 95%; //Ranges of a color increment until they reach this lightness
+  --palette-lightness-step: 7%;
+
+  --c1-h: var(--c-capri-h);
+  --c1: hsl(var(--c1-h), var(--palette-saturation), var(--palette-lightness));
+
+  --c2-h: calc( var(--c2-h) + 1 * var(--palette-angle) );
+  --c2: hsl(var(--c2-h), var(--palette-saturation), var(--palette-lightness));
+
+  --c3-h: calc( var(--c3-h) - 1 * var(--palette-angle) );
+  --c3: hsl(var(--c3-h), var(--palette-saturation), var(--palette-lightness));
+  
+  --c4-h: calc( var(--c4-h) + 2 * var(--palette-angle) );
+  --c4: hsl(var(--c4-h), var(--palette-saturation), var(--palette-lightness));
+
+  @for $i from 1 through 4 {
+    @for $j from 0 through 9{
+      --c#{$i}#{$j}-h: calc( var( --c#{$i}-h ) + 1deg);
+      --c#{$i}#{$j}-s: calc( var(--palette-saturation-max) + #{ $j } * var(--palette-saturation-step));
+      --c#{$i}#{$j}-l: calc( var(--palette-lightness-max) - #{ 9 - $j } * var(--palette-lightness-step));
+      --c#{$i}#{$j}: hsl( var(--c#{$i}#{$j}-h), var(--c#{$i}#{$j}-s), var(--c#{$i}#{$j}-l));
+      --c#{$i}#{$j}-contrast: hsl(0,0%,clamp(0%,100%,calc( calc(var(--c#{$i}#{$j}-l) - 50%) * -1000 )));
+    }
+  }
+  
+  --c-glass-gradient: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgba(223, 233, 243,.97) 100%);
 /***************************************
- * Color 1.2 - Theme Colors
+ * Colors - Generic
  ***************************************/
 
-$colors: ( $color_primary, $color_secondary, $color_tertiary, $color_dark, $color_light)
-$color_names: ( 'primary', 'secondary', 'tertiary', 'dark', 'light')
+  $color-names: ("red","scarlet","vermillion","permisson","orange","orange-peel","amber","golden-yellow", "yellow","lemon","lime","spring-bud","chartreuse","bright-green","harlequin","neon-green", "green","jade","erin","emerald","spring-green","maxt","aquamarine","turqouise", "cyan","sky-blue","capri","cornflower","azure","cobalt","cerulean","sapphire", "blue","iris","indigo","veronica","violet","amethyst","purple","phlox", "magenta","fuchsia","cerise","deep-pink","rose","raspberry","crimson","amaranth" );
 
-@for $i from 1 through length($colors) 
 
-	$color: nth( $colors, $i)
-	$color_name: nth( $color_names, $i)
-	$color_background: $color
-	$color_font: contrast($color_background)
+  // All the HSV Colors up to Quinary from https://en.wikipedia.org/wiki/Tertiary_color
+  @for $i from 1 through 48 {
+    $color-name: nth($color-names,$i);
+    --c-#{$color-name}-h: #{7.5deg * ($i - 1)};
+    --c-#{$color-name}: hsl( var(--#{$color-name}), var(--palette-saturation), var(--palette-lightness) );
+  };
 
-	/***************************************
-	 * Color 1.2.1 - Parts
-	 ***************************************/
-	
-	/* Color Parts - Background	 */
+  --color-insert: #cfc;
+  --color-delete: #fbb;
+  --color-warn: #ffb;
+  --color-error: #fbb;
+  --color-success: #bfb; 
 
-	$cbh: hue($color_background)
-	$cbs: saturation($color_background)
-	$cbl: lightness($color_background)
+}
+* {
+  --color-background-h: 240deg;
+  --color-background-s: 70%;
+  --color-background-l: 20%;
+  --color-background-o: 1;
 
-	/* Color Parts - Font		 */
+  --color-font-h: var(--color-background-h);
+  --color-font-s: calc( 100% - var(--color-background-s) );
+  --color-font-l: clamp(0%,100%,calc( calc(var(--color-background-l) - 50%) * -1000 ));
+  --color-font-o: .8;
 
-	$cfh: hue($color_font)
-	$cfs: saturation($color_font)
-	$cfl: lightness($color_font)
-
-	/*************************
-	 * Color 1.2.2 - Base
-	 *************************/
-
-	.color_#{$color_name}
-	    background: 	hsla( $cbh, $cbs, $cbl, 1)
-	    color:			hsla( $cfh, $cfs, $cfl, .9)
-
-	/*************************
-	 * Color 1.2.3 - Selection
-	 *************************/
-
-	.color_#{$color_name}
-		*:focus
-			outline:				.2em dashed hsla( $cfh, $cfs, $cfl, .7)
-			-moz-outline-radius:	.05em
-		::selection
-		    background: 	hsla( $cfh, $cfs, $cfl, .9)
-		    color:			hsla( $cbh, $cbs, $cbl, .9)
-		::-moz-selection
-		    background: 	hsla( $cfh, $cfs, $cfl, .9)
-		    color:			hsla( $cbh, $cbs, $cbl, .9)
-
-	/*************************
-	 * Color 1.2.4 - Links
-	 *************************/
-
-	.color_#{$color_name}
-		a
-		    color:		hsla( $cfh, 50, 50, .9)
-		a:visited
-		    color:		hsla( $cfh, 30, 40, .9)
-		a:hover
-		    color:		hsla( $cfh, 70, 60, .9)
-	
-	/*************************
-	 * Color 1.2.5 - Selected Links
-	 *************************/
-
-	.color_#{$color_name}
-		a
-			&::selection
-			    background: hsla( $cfh, $cfs, $cfl, .9)
-			    color: 		hsla( $cbh, 50, 50, .9)
-			&:visited
-			   	color: 		hsla( $cbh, 30, 40, .9)
-			&:hover
-			   	color: 		hsla( $cbh, 70, 60, .9)
-			&::selection:visited
-			    color: 		hsla( $cbh, 30, 40, .9)
-			&::selection:hover
-			   	color: 		hsla( $cbh, 70, 60, .9)
-
-@media print
-    html, body, main
-        background: white
+  background: hsla( var(--color-background-h) var(--color-background-s) var(--color-background-l) / var(--color-background-o) );
+  color: hsla( var(--color-font-h) var(--color-font-s) var(--color-font-l) / var(--color-font-o) );
+}

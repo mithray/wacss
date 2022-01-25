@@ -1,0 +1,29 @@
+@mixin elevation($elevation: 1, $elevation-hover, $elevation-focus) {
+
+  --elevation: #{$elevation};
+
+  --shadow-x: 0em;
+  --shadow-y: calc( var(--elevation) * .05em);
+  --shadow-blur: calc(var(--elevation) * .05em + 2px);
+  --shadow-spread: calc(.2px * var(--elevation));
+  --shadow-opacity: calc( .8 - .04 * var(--elevation) );
+  --shadow-color: rgba(0 0 0 / var(--shadow-opacity));
+
+  box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-blur) var(--shadow-spread) var(--shadow-color);
+  transform: translateY( -.1em ) scale(1.05);
+  filter: brightness(1.08) saturate(1.2)
+  transition: all ease-in-out calc( var( --ui-animation-time) * var(--elevation) );
+
+  @if ( variable-exists($elevation-hover) ){
+    &:hover {
+      --elevation: #{ $elevation-hover};
+    }
+  }
+  
+  @if ( variable-exists($elevation-focus) ){
+    &:focus {
+      --elevation: #{ $elevation-focus};
+    }
+  }
+
+}

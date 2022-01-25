@@ -1,4 +1,4 @@
-$just_intonation:
+$just-intonation:
 	( "P1": 1
 	, "m2": calc(17 / 16)
 	, "M2": calc(9 / 8)
@@ -32,7 +32,7 @@ $equal-temperament:
 	, "P8": 2
   );
 
-$ratio_list:
+$ratio-list:
 	( 1
 	, calc(17 / 16)
 	, calc(9 / 8)
@@ -89,23 +89,22 @@ $major-seventh: $M7;
 $perfect-octave: $P8;
 
 :root {
-	--perfect-unison: #{$perfect-unison};
-	--minor-second: #{$minor-second};
-	--major-second: #{$major-second};
-	--minor-third: #{$minor-third};
-	--major-third: #{$major-third};
-	--perfect-fourth: #{$perfect-fourth};
-	--augmented-fourth: #{$augmented-fourth};
-	--diminished-fifth: #{$diminished-fifth};
-	--perfect-fifth: #{$perfect-fifth};
-	--minor-sixth: #{$minor-sixth};
-	--major-sixth: #{$major-sixth};
-	--minor-seventh: #{$minor-seventh};
-	--major-seventh: #{$major-seventh};
-	--perfect-octave: #{$perfect-octave};
-  --golden-ratio: #{$golden-ratio};
+	--ratio-perfect-unison: #{$perfect-unison};
+	--ratio-minor-second: #{$minor-second};
+	--ratio-major-second: #{$major-second};
+	--ratio-minor-third: #{$minor-third};
+	--ratio-major-third: #{$major-third};
+	--ratio-perfect-fourth: #{$perfect-fourth};
+	--ratio-augmented-fourth: #{$augmented-fourth};
+	--ratio-diminished-fifth: #{$diminished-fifth};
+	--ratio-perfect-fifth: #{$perfect-fifth};
+	--ratio-minor-sixth: #{$minor-sixth};
+	--ratio-major-sixth: #{$major-sixth};
+	--ratio-minor-seventh: #{$minor-seventh};
+	--ratio-major-seventh: #{$major-seventh};
+	--ratio-perfect-octave: #{$perfect-octave};
+  --ratio-golden: #{$golden-ratio};
 }
-
 
 /*******************************
  * Modes

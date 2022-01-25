@@ -2,13 +2,14 @@
  * Ratios
  ***********************************/
 
-@import ratios
+@import ratios;
 
 /***********************************
  * Typography
  ***********************************/
 
 // Constants //
+
 
 // Applied //
 $font-heading: $font-serif;
@@ -17,26 +18,6 @@ $font-body: $font-sans-serif;
 /***********************************
  * Colors
  ***********************************/
-
-$color_hue_difference: 90
-$contrast: 95
-
-$color_primary_default:     #445577
-$color_secondary_default:   adjust-hue($color_primary_default, $color_hue_difference)
-$color_tertiary_default:    adjust-hue($color_primary_default, 360 - $color_hue_difference)
-$color_light_default:       lighten( black, 1% * (100 - $contrast / 2))
-$color_dark_default:        darken( white,  1% * (100 - $contrast / 2))
-
-@if not(variable-exists('color_primary'))
-    $color_primary:     $color_primary_default      !global
-@if not(variable-exists('color_secondary'))
-    $color_secondary:   $color_secondary_default    !global
-@if not(variable-exists('color_tertiary'))
-    $color_tertiary:    $color_tertiary_default     !global
-@if not(variable-exists('color_light'))
-    $color_light:       $color_light_default        !global
-@if not(variable-exists('color_dark'))
-    $color_dark:        $color_dark_default         !global
 
 /************************
  * Component Interaction

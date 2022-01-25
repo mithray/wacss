@@ -1,7 +1,7 @@
-# Regulacss
+# Regulacss / kosmocss / munducss / wacss(Japanese "和")
 *Semantic, Classless, Componentized Css*
 
-[DISCLAIMER: nothing here actually works. I'm just saving stuff here.]
+[DISCLAIMER: nothing here actually works.]
 
 ## Introduction
 
@@ -21,7 +21,7 @@ This is a CSS framework designed to work well with no classes, as long as you us
   - Poorly connected users("developing world")
 - Standardized
 - Fast
-  - Less Javascript
+  - Less Javascript. Javascript may be used sometimes to improve the fluidity of animations or enhance accessibility.
   - Pure CSS wherever possible
 - Traditional Modular HTML / CSS structure.
   - HTML represents State
@@ -53,28 +53,34 @@ More than likely, to understand you probably just need to see how it is used.
 
 ## Contents
 
-1. Atoms
+1. Design Tokens
+  - Typography
+  - Color
+  - Media
+  - Effects
+
+2. Elements
   - Button
-  - Chip
   - Code
   - Input. Should be able to pass it a JSON Schema and an input field is created.
   	- Text
   	- Various Types
   	- Combo box (select, multiple)
-  	- Checkbox ()
+  	- Checkbox
   	- File
   	- Search
   	- Select (with optgroup)
     - Slider
   - Link
   - List
+  - Tag
   - Title
 
-2. Molecules
+3. Components
   - Accordion
   - Breadcrumb
   - Card(Tile)
-  - Form
+  - Form. Should be able to pass it a JSON Schema and an input field is created.
   - Notification
   - Pagination
   - Table
@@ -82,17 +88,14 @@ More than likely, to understand you probably just need to see how it is used.
   - Tooltip(Can be seen as a more advanced "title" attribute)
   - Various Schema.org or other Objects
 
-3. Cells
+4. Patterns
   - Footer
   - Grid
+  - Modal
   - Header
   - Hero
   - Navbar
 
-4. Globals
-  - Typography
-  - Color
-  - Media
 
 ## Dimensionality and UX
 
@@ -106,19 +109,19 @@ A text document at any point of time is only 2 dimensions, there is no depth to 
 Below is what a typical abstraction of an html page might be. A letter is added for each element subsetted from its parent, and a letter is changed between siblings. 
 
 -A
-    - AA
-        - AAA
-        - AAB
-    - AB
-        - ABA
-        - ABB
+  - AA
+    - AAA
+    - AAB
+  - AB
+    - ABA
+    - ABB
 -B
-    - BA
-        - BAA
-        - BAB
-    - BB
-        - BBA
-        - BBB
+  - BA
+    - BAA
+    - BAB
+  - BB
+    - BBA
+    - BBB
 
 This can also be represented by the following array, which looks very similar to a JSON document.
 
@@ -128,5 +131,11 @@ The structured nature of this hopefully also demonstrates how an abstract data s
 
 ### References
 
+- [Inclusive Components](https://inclusive-components.design/). The strictest accessibility component designer I know of.(Best)
+- [Odyssey](https://odyssey.okta.design/). Native HTML/CSS. (Good).
+- [Carbon](https://www.carbondesignsystem.com/components/). Nice looking and usually simple and practical. Vanilla version is quite good.
+- [Paragon](https://openedx.github.io/paragon/components/). React dependent(Not accessible). 
+- [Radix](https://www.radix-ui.com/docs/primitives/components). React dependent(Not accessible).
+- [Clarity](https://clarity.design/). Framework Dependent(Not accesible)
 - [Creating Usability With Motion](https://medium.com/ux-in-motion/creating-usability-with-motion-the-ux-in-motion-manifesto-a87a4584ddc)
 - [App Animations](www.appanimations.com)

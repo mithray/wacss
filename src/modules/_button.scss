@@ -1,0 +1,17 @@
+button {
+	padding: .5em;
+	background: var(--c15);
+	color: var(--c15-contrast);
+	border: .1em solid rgba(0 0 0 / .7);
+	border-radius: var(--ui-border-radius);
+
+  @include shadow(1,2,3)
+  &:hover {
+    transition: all ease-in-out var(--ui-animation-time);
+    transform: translateY(-.1em);
+  }
+  &:focus {
+    transition: all ease-in-out var(--ui-animation-time);
+    transform: translateY(-.2em);
+  }
+}

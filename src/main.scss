@@ -1,0 +1,16 @@
+:root{
+	--ui-sharpness: .8; // Between 0 and 1
+	--ui-border-radius: calc( 1em * calc(1 - var(--ui-sharpness)));
+	--ui-animation-time: calc( 1000ms * calc(1 - var(--ui-sharpness)) );
+  --ui-color-focus: rgba(80 60 240 / .7);
+  --ui-color-selection: var(--c18);
+}
+
+/*************
+
+  Typography 
+
+ *************/
+
+@import "modules/typography";
+@import "modules/misc";

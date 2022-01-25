@@ -1,0 +1,225 @@
+@include elevation
+@include variables
+
+:root {
+  --animation-time: 400ms;
+  --image-contract: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAfElEQVRIie3QMQoCQQyF4f8tbC2CRYo9zZxDzyB4DwvPIF5jjiPBRqwFYyUsik0qhXxVhpCXMFBK+X+aPyJiDeyARTLvChwkHT8WRMTK3c+ttdHdU+lmRu/9bmaTpAvAMOsPX+YyHq/i/Ys2wBZYJoNvwF7SKX9bKeX3PAEINxwGsVDdFgAAAABJRU5ErkJggg=='), auto;
+  --image-expand: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAACLUlEQVRIidWVT2sTYRDGfxNNSdpSg5dSJbCCUOxGL90cCsVCICf9BPoFCkWEXpKDRw97VS/5AvoN9BJIYQkI7uZiSiQgmIs9BYkma0JCGA/dxHUTShQrdmBh35lneN6Zd/7ARReJKlR1FbgNrITUn0XkQwR3C7geUvWAuoj4YdzliNN93/dfep63NhqNpnrLssaqelNEWgHO6HQ6dc/zLk0w8Xgcy7K+qeoDEXk9E4qqrnS73a9bW1sK/PI5jqOquh3CbjuOM4MzTVN7vV5HVZfnRWB6nrfWaDTIZrPkcrmpIZ1OAwxD2GE6naZQKEwVlUoF13XxPO/K3t5eBngXJUgMBgMAdnd3sW37LeAEthPgOIQ9NgzjsW3b14Lz3cPDwx3Xden3+wCJeRFEpSIiT+YZRESB55Ozqj4FduZhY2cQ/F1R1c12uz0ul8vabDZVVQ9+w/eg2WxquVzWdrs9VtXNiU0iwBvAVWDEaU3rggTCae/EgS8i8mnRy/3/8u9SdF6PHC7Tddd1Y/l8nlKpBLCxKAGwUSqVyOfzuK4bA9bnEZyLnNXJOVW1g/8T4MXkTYKcPwKmo2IRgkEicTpCqtUqxWJxh6D99/f3MQzjCKgH2Eyr1XoWpHLqA5BMJgH6M0yTcW2a5h+P60wmMzOuo2V6z/f9V7VabW04/DmdLcsap1Kp6ML5GF44S0tLZLPZTjKZfCgib+YSBM7LwB1gNaRedGW+F5HvM+m50PIDr4pI/6vRX6QAAAAASUVORK5CYII='), auto;
+}
+@mixin cover( $position: absolute, $margin: 0 ) {
+  position: $position;
+  left: #{ 0 + if( $position == fixed, $margin * 1vw, $margin * 1em) };
+  top: #{ 0 + if( $position == fixed, $margin * 1vh, $margin * 1em) };
+  width: #{ if( $position == fixed, 100vw - $margin * 2vw, 100% )  };
+  height: #{ if( $position == fixed, 100vh - $margin * 2vh, 100% ) };
+}
+@mixin contracted {
+  width: 15em;
+  height: 25em;
+  border: .15em solid rgba(0,0,0,.1);
+}
+* {
+  transition: all ease-in-out var(--animation-time);
+}
+input {
+  opacity: 1;
+  display: inline;
+  position: fixed;
+  background: black;
+  top: 1em;
+  z-index: 4;
+  &:nth-child(1) {
+    left: 2em;
+  }
+  &:nth-child(2) {
+    left: 3em;
+  }
+}
+@keyframes toggleExpand {
+  0% {
+    @include contracted();
+    position: fixed;
+    left: var(--posContractedX);
+    top: var(--posContractedY);
+  }
+  100% {
+    @include cover(fixed, 10);
+  }
+}
+@keyframes toggleContract {
+  0% {
+    @include cover(fixed, 10);
+    position: fixed;
+    left: calc(var(--posExpandedX));
+    top: calc(var(--posExpandedY));
+  }
+  100% {
+    @include contracted();
+    position: fixed;
+    left: calc(var(--posContractedX));
+    top: calc(var(--posContractedY));
+  }
+}
+@keyframes removeContractBlur {
+  0% {
+    background: rgba(0,0,0,.7);
+    z-index: -1;
+    display: block;
+  }
+  99% {
+    background: rgba(0,0,0,0);
+    display: block;
+    z-index: -1;
+  }
+  100% {
+    background: rgba(0,0,0,0);
+    display: none;
+    z-index: -1;
+  }
+}
+@keyframes addContractBlur {
+  0% {
+    background: rgba(0,0,0,0);
+    display: block;
+    z-index: -1;
+  }
+  100% {
+    background: rgba(0,0,0,.7);
+    display: block;
+    z-index: -1;
+  }
+}
+.card {
+  position: relative;
+  border-radius: .3em;
+  overflow: hidden;
+  :not(label) {
+    background: white;
+  }
+  label[for="contracted"]:nth-child(1) {
+    @include cover(fixed);
+    cursor: var(--image-contract);
+  }
+}
+[id="expanded"]:checked ~ .card {
+  @include cover(fixed,10);
+  animation: toggleExpand ease-in-out var(--animation-time);
+  label[for="expanded"] {
+    display: none;
+  }
+  label[for="contracted"] {
+    cursor: var(--image-contract);
+    background: black;
+    &:hover {
+      background: rgba(10,20,30,.4);
+    }
+  }
+  label[for="contracted"]:nth-child(1) {
+    animation: addContractBlur ease-in-out var(--animation-time);
+    background: rgba(0,0,0,.7);
+    display: block;
+    z-index: -1;
+    &:hover {
+      background: rgba(10,20,30,.4);
+    }
+  }
+  label[for="contracted"]:nth-child(2) {
+    icon-size: 2em;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: calc(100% - var(--icon-size));
+    width: var(--icon-size);
+    height: var(--icon-size);
+    fill: white;
+    svg {
+      position: absolute;
+      background: transparent;
+    }
+  }
+}
+[id="contracted"]:checked ~ .card {
+  animation: toggleContract ease-in-out var(--animation-time);
+  label[for="contracted"]:nth-child(1) {
+    animation: removeContractBlur ease-in-out var(--animation-time);
+  }
+}
+[id="contracted"]:checked ~ .card,
+input:not(:checked) ~ input:not(:checked) ~ .card {
+  @include contracted();
+  label[for="expanded"] {
+    @include cover(absolute);
+    cursor: var(--image-expand);
+  }
+  label[for="contracted"] {
+    @include cover(fixed);
+    z-index: -5;
+    opacity: 0;
+  }
+  label[for="contracted"]:nth-child(2) {
+    display: none;
+    svg {
+      display: none;
+    }
+  }
+  &:hover {
+    box-shadow: 0 .1em .1em .1em rgba(40,120,180,.8);
+  }
+}
+/*
+
+input
+input
+
+div.card
+
+  p some text
+
+  button
+    label(for="expand")
+    label(for="contract")
+    svg
+
+
+Animation works without the JS, but JS makes the transition smooth. I don't think a smooth animation is possible with only CSS if you are switching between fixed and relative positioning.
+	
+const cards = Array.from(document.querySelectorAll('.card'))
+const expanded = document.querySelector('input#expanded')
+  
+const getBoundingRect =
+  (el) => {                               
+    let rect = el.getBoundingClientRect()
+    rect.x = Math.round(rect.x)
+    rect.y = Math.round(rect.y)
+    return rect
+  }
+for(let i = 0; i < cards.length; i++){
+                                
+  let card = cards[i]
+  
+  card.onanimationstart = () => {            
+    let { x, y } = getBoundingRect( card )
+    if(expanded.checked){
+      card.style.setProperty('--posContractedX', x + "px")
+      card.style.setProperty('--posContractedY', y + "px")
+    } else {
+      card.style.setProperty('--posExpandedX', x + "px")
+      card.style.setProperty('--posExpandedY', y + "px")
+    }
+  }
+
+  card.onanimationend = () => {
+    let { x, y } = getBoundingRect( card )      
+    if(expanded.checked){
+      card.style.setProperty('--posExpandedX', x + "px")
+      card.style.setProperty('--posExpandedY', y + "px")
+    } else {
+      card.style.setProperty('--posContractedX', x + "px")
+      card.style.setProperty('--posContractedY', y + "px")  
+    }
+  }
+
+}
+
+*/
+
