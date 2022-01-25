@@ -1,9 +1,16 @@
+//https://codepen.io/alexzaworski/pen/LEWRxm
 button {
+  --color-background-l: 50%;
+  --color-1: hsl( var(--color-background-h) var(--color-background-s) var(--color-background-l));
+  --color-2: hsl( var(--color-background-h) calc(var(--color-background-s) + 10%) calc( var(--color-background-l) - 10%));
+  --color-3: hsl( var(--color-background-h) calc(var(--color-background-s) + 20%) calc( var(--color-background-l) - 20%));
+  cursor: pointer;
 	padding: .5em;
-	background: var(--c15);
-	color: var(--c15-contrast);
-	border: .1em solid rgba(0 0 0 / .7);
+  border-top: 1px solid var(--color-3);
+  border-bottom: 1px solid var(--color-2);
 	border-radius: var(--ui-border-radius);
+  text-shadow: 0 -2px 0 #4a8a65, 0 1px 1px #c2dece;
+  background: linear-gradient(to bottom, var(--color-1) 0%, var(--color-2) 26%, var(--color-3) 100%)
 
   @include shadow(1,2,3)
   &:hover {
@@ -13,5 +20,23 @@ button {
   &:focus {
     transition: all ease-in-out var(--ui-animation-time);
     transform: translateY(-.2em);
+  }
+  &::before {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    top: 6px;
+    border-radius: 5px;
+    height: 65px;
+    background: linear-gradient(to top, #1e5033 0%, #378357 6px);
+    transition: all 0.078s ease-out;
+    box-shadow: 0 1px 0 2px rgba(0, 0, 0, 0.3), 0 5px 2.4px rgba(0, 0, 0, 0.5), 0 10.8px 9px rgba(0, 0, 0, 0.2);
+  }
+  &:active::before{
+    top: 0;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.7), 0 3px 9px rgba(0, 0, 0, 0.2);
   }
 }

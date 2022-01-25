@@ -1,12 +1,12 @@
-# Regulacss / kosmocss / munducss / wacss(Japanese "和")
+# WaCss (和Css)
 *Semantic, Classless, Componentized Css*
-![Sakura - Cherry Blossom](/sakura.jpg)
-
 [DISCLAIMER: nothing here actually works.]
+
+![Sakura - Cherry Blossom](/sakura.jpg)
 
 ## Introduction
 
-This is a CSS framework designed to work well with no classes, as long as you use proper Semantic HTML5! 
+This is a CSS framework designed to work as a standardized stylesheet which enhances accessibility and works well with no classes, as a  as long as you use proper Semantic HTML5! 
 
 ## Design Goals
 
