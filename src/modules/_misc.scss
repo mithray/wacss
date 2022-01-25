@@ -56,8 +56,11 @@
 
 a:link {
   cursor: var(--icon-uri-link-external), auto;
-  @include elevation(1,2,3);
+  --color-font-h: 220deg;
+  --color-font-s: 50%;
+  --color-font-l: 50%;
 /*
+  @include elevation(1,2,3);
   --color-background-l: 30%; 
 	&:visited {
   --color-font-h: 290deg;
