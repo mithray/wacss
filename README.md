@@ -6,40 +6,41 @@
 
 ## Introduction
 
-This is a CSS framework designed to work as a standardized stylesheet which enhances accessibility and works well with no classes, as a  as long as you use proper Semantic HTML5! 
+WaCSS is a CSS stylesheet designed to work on bare (Classless) Semantic HTML5, which enhances accessibility, and uses standards based components, primarily in CSS.
 
 ## Design Goals
 
 - International
   - Utilizing global standards.
   - Language tagging with translation hooks
-  - Easy to learn. No parochial class names. Just widely accepted HTML and Schema.
+  - Quite easy to learn. And that learning is mostly improving HTML knowledge and Schema, so skills are more transferable. 
 - Accessible.
   - Colorblind users
   - Blind users
   - Keyboard users
-  - Robots users
+  - Robot users
   - Poorly connected users("developing world")
 - Standardized
 - Fast
   - Less Javascript. Javascript may be [used sometimes][Javascript Requirements] to improve the fluidity of animations or enhance accessibility.
   - Pure CSS where possible
 - Traditional Modular HTML / CSS structure.
-  - HTML represents State
-  - CSS is used for display
-  - Javascript and/or following hyperlinks is used to change state.
+  - HTML - represents State
+  - CSS - is used for display
+  - Javascript (and/or following hyperlinks) - is used to change state.
 
 ## Motivation
 
 Motivated by the things I hate about the web.
 
-- Too much Javascript
+- Too much Javascript. (lags my old laptops and phones)
 - Ugly HTML
 - Non Standard HTML5
-- Hardly anybody uses Semantic Markup which makes usability and web scraping harder
+- Hardly anybody uses Semantic Markup which makes usability and web scraping harder. 
 - Too many trackers
 - Webpages are too heavy
 - "Web Apps" instead of "Webpages". I want to read a blog, not download an app. Actually, I would rather read this with lynx. I don't want to sign up to your emailing list or hookup with local singles 5 miles from my location. Why do you even know my location? This is sketchy! I'm out of here!
+- These issues lead to huge financial failures in interoperability and in the medical field, [even death][] which most likely result in trillions per year
 
 Basically, the idea behind this CSS is that a webpage is an HTML document, which describes some information that somebody wants to publicize. I wish the Server would justsend that information, and let the client decide how to render it. This is often a preferred usecase for myself and many others, and it already is the case for blind and some other access impaired users. This library is designed to be the kind of generic CSS that can style an HTML document client side without accepting any CSS from the server. This will only really work if people use proper HTML! I don't really expect this way of doing things to become the primary way to use the web any time soon, but I think it *is* preferable for many users, who will often have their own stylesheets or nightmode, or print the document because it's easier to read off screen.
 
@@ -148,3 +149,4 @@ The structured nature of this hopefully also demonstrates how an abstract data s
 - [JavaScript Requirements For Accessible Components][Javascript Requirements]
 
 [Javascript Requirements]: https://www.smashingmagazine.com/2021/06/css-javascript-requirements-accessible-components/ "JavaScript Requirements For Accessible Components"
+[even death]: https://www.hcinnovationgroup.com/interoperability-hie/article/13008122/the-cost-of-interoperability "even death"
