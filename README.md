@@ -1,5 +1,6 @@
 # Regulacss / kosmocss / munducss / wacss(Japanese "和")
 *Semantic, Classless, Componentized Css*
+![Sakura - Cherry Blossom](/sakura.jpg)
 
 [DISCLAIMER: nothing here actually works.]
 
