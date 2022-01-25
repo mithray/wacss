@@ -145,5 +145,6 @@ The structured nature of this hopefully also demonstrates how an abstract data s
 
 ## Accessibility
 - [Harvard](https://accessibility.huit.harvard.edu/)
+- [JavaScript Requirements For Accessible Components][Javascript Requirements]
 
 [Javascript Requirements]: https://www.smashingmagazine.com/2021/06/css-javascript-requirements-accessible-components/ "JavaScript Requirements For Accessible Components"
