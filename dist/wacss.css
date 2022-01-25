@@ -340,7 +340,7 @@
 * {
   --color-background-h: 240deg;
   --color-background-s: 70%;
-  --color-background-l: 20%;
+  --color-background-l: 100%;
   --color-background-o: 1;
   --color-font-h: var(--color-background-h);
   --color-font-s: calc( 100% - var(--color-background-s) );
