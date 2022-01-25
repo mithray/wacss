@@ -20,10 +20,44 @@
 * Links
 *************************/
 
-/*
+// https://www.computerhope.com/issues/ch001789.htm
+is(
+
+  // Audio Types
+  a[href$=".aif"]
+  ,a[href$=".cda"] 
+  ,a[href$=".mid"] 
+  ,a[href$=".midi"] 
+  ,a[href$=".mp3"] 
+  ,a[href$=".mp4"] 
+  ,a[href$=".mpa"] 
+  ,a[href$=".ogg"] 
+  ,a[href$=".wav"] 
+  ,a[href$=".wma"] 
+  ,a[href$=".wpl"] 
+  
+  // Compressed
+  ,a[href$=".7z"] 
+  ,a[href$=".arj"] 
+  ,a[href$=".deb"] 
+  ,a[href$=".pkg"] 
+  ,a[href$=".rar"]
+  ,a[href$=".pkg"] 
+  ,a[href$=".rpm"] 
+  ,a[href$=".tar"] 
+  ,a[href$=".gz"] 
+  ,a[href$=".z"]
+  ,a[href$=".zip"]
+
+  ):after
+{
+  content: var(--icon-uri-download);
+}
+
 a:link {
   cursor: var(--icon-uri-link-external), auto;
   @include elevation(1,2,3);
+/*
   --color-background-l: 30%; 
 	&:visited {
   --color-font-h: 290deg;
@@ -36,9 +70,9 @@ a:link {
 	&::selection:hover {
     --color-background-l: 30%;
   }
+*/
 
 }
-*/
 @media print{
    a:after {
     content: " (" attr(href) ") ";
