@@ -1,7 +1,7 @@
 {
   "name": "@mithray/mnd",
-  "version": "0.0.147",
-  "description": "*Semantic, Classless, Componentized Css*",
+  "version": "0.0.148",
+  "description": "Accessible, Semantic HTML as CSS Class Replacement, Componentized Css",
   "main": "dist/wacss.css",
   "dependencies": {
     "sass": "^1.48.0"

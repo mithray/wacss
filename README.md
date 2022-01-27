@@ -1,6 +1,7 @@
 # WaCss (和Css)
 *Semantic, Classless, Componentized Css*
 [DISCLAIMER: nothing here actually works.]
+[WHY ARE PEOPLE DOWNLOADING THIS IT IS NOT READY ??!?!?]
 
 ![Sakura - Cherry Blossom](/sakura.jpg)
 
