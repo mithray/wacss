@@ -16,6 +16,8 @@
   --color-background-h: 220deg;
   --color-background-s: 60%;
   --color-background-l: 80%;
+  --color-background-o: .8;
+  background: hsla(var(--color-background-h) var(--color-background-s) var(--color-background-l) / var(--color-background-o) );
 }
 
 /*************************

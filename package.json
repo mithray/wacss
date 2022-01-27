@@ -1,6 +1,6 @@
 {
   "name": "@mithray/mnd",
-  "version": "0.0.146",
+  "version": "0.0.147",
   "description": "*Semantic, Classless, Componentized Css*",
   "main": "dist/wacss.css",
   "dependencies": {
