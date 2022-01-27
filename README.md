@@ -1,6 +1,9 @@
 # WaCss (和Css)
+
 *Semantic, Classless, Componentized Css*
+
 [DISCLAIMER: nothing here actually works.]
+
 [WHY ARE PEOPLE DOWNLOADING THIS IT IS NOT READY ??!?!?]
 
 ![Sakura - Cherry Blossom](/sakura.jpg)
@@ -142,7 +145,7 @@ The structured nature of this hopefully also demonstrates how an abstract data s
 - [Radix](https://www.radix-ui.com/docs/primitives/components). React dependent(Not accessible).
 - [Clarity](https://clarity.design/). Framework Dependent(Not accesible)
 - [Creating Usability With Motion](https://medium.com/ux-in-motion/creating-usability-with-motion-the-ux-in-motion-manifesto-a87a4584ddc)
-- [App Animations](www.appanimations.com)
+- [App Animations](https://www.appanimations.com)
 
 ### Accessibility
 - [Harvard](https://accessibility.huit.harvard.edu/)
