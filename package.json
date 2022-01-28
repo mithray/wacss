@@ -1,6 +1,6 @@
 {
-  "name": "@mithray/mnd",
-  "version": "0.0.149",
+  "name": "wacss",
+  "version": "0.0.1",
   "description": "A Generic CSS Stylesheet that encourages conformity to standardized HTML, ARIA and Schema practices thereby creating improved Usability/Accessibility for a greater number of people. The Japanese word \"和\" which can be translated as \"teamwork\" or \"harmony\" or \"peace\". I hope this stylesheet will establish a kind of harmony(usability) through its conformance and dependence on community standards(teamwork). Classless. Aims to work well on Screenreaders or without Javascript.",
   "main": "dist/wacss.css",
   "dependencies": {
@@ -10,15 +10,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Raymond Smith <mithray@protonmail.com> (mithray.github.io/regularcss)",
+  "author": "Raymond Smith <mithray@protonmail.com> (mithrayls.github.io/wacss)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mithrayls/mnd.git"
+    "url": "git+https://github.com/mithrayls/wacss.git"
   },
   "keywords": ["Usability", "Generic", "Classless", "CSS", "SASS", "SCSS", "UX", "UI", "HTML5", "Semantic", "Schema", "Modular", "Wa", "和", "和Css", "WaCss", "Standardized"],
   "bugs": {
-    "url": "https://github.com/mithrayls/mnd/issues"
+    "url": "https://github.com/mithrayls/wacss/issues"
   },
-  "homepage": "https://github.com/mithrayls/mnd#readme"
+  "homepage": "https://github.com/mithrayls/wacss#readme"
 }
