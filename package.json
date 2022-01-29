@@ -1,9 +1,10 @@
 {
   "name": "wacss",
-  "version": "0.0.1",
+  "version": "0.0.101",
   "description": "A Generic CSS Stylesheet that encourages conformity to standardized HTML, ARIA and Schema practices thereby creating improved Usability/Accessibility for a greater number of people. The Japanese word \"和\" which can be translated as \"teamwork\" or \"harmony\" or \"peace\". I hope this stylesheet will establish a kind of harmony(usability) through its conformance and dependence on community standards(teamwork). Classless. Aims to work well on Screenreaders or without Javascript.",
   "main": "dist/wacss.css",
   "dependencies": {
+    "feather-icons": "^4.28.0",
     "sass": "^1.48.0"
   },
   "devDependencies": {},
@@ -16,7 +17,25 @@
     "type": "git",
     "url": "git+https://github.com/mithrayls/wacss.git"
   },
-  "keywords": ["Usability", "Generic", "Classless", "CSS", "SASS", "SCSS", "UX", "UI", "HTML5", "Semantic", "Schema", "Modular", "Wa", "和", "和Css", "WaCss", "Standardized"],
+  "keywords": [
+    "Usability",
+    "Generic",
+    "Classless",
+    "CSS",
+    "SASS",
+    "SCSS",
+    "UX",
+    "UI",
+    "HTML5",
+    "Semantic",
+    "Schema",
+    "Modular",
+    "Wa",
+    "和",
+    "和Css",
+    "WaCss",
+    "Standardized"
+  ],
   "bugs": {
     "url": "https://github.com/mithrayls/wacss/issues"
   },
