@@ -1,0 +1,125 @@
+# Alias
+color:
+
+  text-dark: $color-gray-100
+	text-light: $color-gray-10
+
+	mouse: $gray-80
+
+	read-only: $gray-80
+	required: $color-red-60
+  invalid: $color-bronze-60
+	disabled: $color-gray-20
+
+  # Neutral
+  neutral: $color-gray-10
+	neutral-active: $color-gray-20
+	neutral-focus: $color-gray-10
+	neutral-hover: $color-white
+
+  # Theme
+	secondary: $color-theme-20
+	secondary-active: $color-theme-30
+  secondary-focus: $color-theme-20
+	secondary-hover: $color-theme-10
+
+	primary: $color-theme-60
+	primary-active: $color-theme-70
+	primary-focus: $color-theme-60
+	primary-hover: $color-theme-50
+
+  # Success
+  success: $color-green-20
+	success-active: $color-green-30
+	success-focus: $color-green-20
+	success-hover: $color-green-10
+
+	success-primary: $color-green-60
+	success-primary-active: $color-green-70
+	success-primary-focus: $color-green-60
+	success-primary-hover: $color-green-50
+
+  # Warning
+  warning: $color-20
+	warning-active: $color-bronze-30
+	warning-focus: $color-bronze-20
+	warning-hover: $color-bronze-10
+
+	warning-primary: $color-bronze-60
+	warning-primary-active: $color-bronze-70
+	warning-primary-focus: $color-bronze-60
+	warning-primary-hover: $color-bronze-50
+
+  # Danger
+  danger: $color-red-20
+	danger-active: $color-red-30
+	danger-focus: $color-red-20
+	danger-hover: $color-red-10
+
+	danger-primary: $color-red-60
+	danger-primary-active: $color-red-70
+	danger-primary-focus: $color-red-60
+	danger-primary-hover: $color-red-50
+
+borderColor:
+
+  default: $color-gray-40
+
+  # Theme
+	theme: $color-theme-60
+	theme-active: $color-theme-70
+	theme-focus: $color-theme-70
+	theme-hover: $color-theme-50
+
+  # Danger
+	danger: $color-red-60
+	danger-active: $color-red-70
+	danger-focus: $color-red-70
+	danger-hover: $color-red-50
+	
+  # Success
+  success: $color-green-60
+	success-active: $color-green-70
+	success-focus: $color-green-70
+	success-hover: $color-green-50
+	
+  # Warning
+  warning: $color-bronze-60
+	warning-active: $color-bronze-70
+	warning-focus: $color-bronze-70
+  warning-hover: $color-bronze-70
+	
+#Components
+
+color:
+  h1: $color-primary
+  h2: $color-primary
+  h3: $color-primary
+  h4: $color-primary
+  h5: $color-primary
+  h6: $color-primary
+
+icon:
+  default: $gray-80
+  theme: $color-primary
+  danger: $color-red-60
+  success: $color-green-60
+  warning: $color-bronze-60
+
+input-backgroundColor: $color-white
+input-backgroundColor-disabled: $color-gray-20
+input-color-placeholder: $color-gray-60
+
+panel-backgroundColor: $color-white
+panel-backgroundColor-inverted: #434a54
+panel-borderColor: $color-gray-20
+panel-borderColor-inverted: #434a54
+
+well-backgroundColor: $color-gray-20
+well-backgroundColor-danger: $color-red-20
+well-backgroundColor-success: $color-green-20
+well-backgroundColor-warning: $color-bronze-20
+
+well-borderColor-danger: #fa8e8e
+well-borderColor-success: #57c282
+well-borderColor-warning: #e89c3f

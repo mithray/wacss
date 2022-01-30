@@ -1,0 +1,90 @@
+durations:
+typography:
+  typescale:
+  fontFamily: "Open Sans";
+  fontFamily-system: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  fontFamily-monospace: "SF Mono", "Droid Sans Mono", "Source Code Pro", Monaco, Consolas, "Courier New", Courier, monospace;
+  fontSize-base: 1rem;
+  fontSize-mouse: 0.6875rem;
+  fontSize-prose: 1rem;
+  fontSize-ui: 0.875rem;
+  fontWeight-regular: 400;
+  fontWeight-semiBold: 600;
+  fontWeight-bold: 700;
+  fontWeight-extraBold: 800;
+  lineHeight: 1.25;
+  lineHeight-heading: 1.25;
+  lineHeight-heading-small: 1.5;
+  lineHeight-prose: 1.5;
+  headings:
+    h1-fontSize: 2.125rem;
+    h1-fontWeight: 800;
+    h2-fontSize: 1.75rem;
+    h2-fontWeight: 700;
+    h3-fontSize: 1.375rem;
+    h3-fontWeight: 700;
+    h4-fontSize: 1.125rem;
+    h4-fontWeight: 700;
+    h5-fontSize: 0.875rem;
+    h5-fontWeight: 700;
+    h6-fontSize: 0.875rem;
+    h6-fontWeight: 400;
+
+borderRadius-1: 3px;
+boxShadow-1: 0 1px 2px 0 rgba(0,0,0,0.2), 0 2px 4px 0 rgba(0,0,0,0.2);
+boxShadow-2: 0 2px 4px 0 rgba(0,0,0,0.2), 0 4px 8px 0 rgba(0,0,0,0.2);
+boxShadow-3: 0 4px 8px 0 rgba(0,0,0,0.2), 0 8px 16px 0 rgba(0,0,0,0.2);
+boxShadow-4: 0 8px 16px 0 rgba(0,0,0,0.2), 0 20px 16px -8px rgba(0,0,0,0.2);
+boxShadow-5: 0 16px 24px 0 rgba(0,0,0,0.2), 0 32px 24px -16px rgba(0,0,0,0.2);
+
+breakpoints:
+  mobile-min: 0px
+  mobile-mid: 300px 
+  mobile-max: 600px	
+
+  tablet-min: 600px 
+  tablet-mid: 900px
+  tablet-max: 1200px
+
+  laptop-min: 1200px
+  laptop-mid: 1500px
+  laptop-max: 1800px
+
+  desktop-min: 1800px
+  desktop-mid: 2400px
+  desktop-max: 2800px
+
+spacing:
+	size-xxs: .4em;
+	size-xs:  0.8em;
+	size-sm:  1.2em;
+	size-md:  1.6em;
+	size-lg:  2.0em;
+	size-xl:  2.4em;
+  size-xxl: 2.8em;
+
+	space-inline-xxs: 0.1em;
+	space-inline-xs:  0.2em;
+	space-inline-sm:  0.4em;
+	space-inline-md:  0.8em;
+	space-inline-lg:  1.2em;
+	space-inline-xl:  1.6em;
+	space-inline-xxl: 3.2em;
+
+	space-inset-sm: .4em;
+	space-inset-md: .8em;
+	space-inset-lg: 1.2em;
+
+	space-stack-xxs: .1em;
+	space-stack-xs: .2em;
+	space-stack-sm: .4em;
+	space-stack-md: .8em;
+	space-stack-lg: 1.2em;
+	space-stack-xl: 1.6em;
+	space-stack-xxl: 3.2em;
+
+zIndex-100: 100;
+zIndex-200: 200;
+zIndex-400: 400;
+zIndex-800: 800;
+zIndex-1600: 1600;
