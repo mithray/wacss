@@ -1,0 +1,39 @@
+color:
+
+  text-dark: $color-gray-100
+	text-light: $color-gray-10
+
+	read-only: $gray-80
+	required: $color-red-60
+  invalid: $color-bronze-60
+	disabled: $color-gray-20
+
+  neutral: $color-gray-10
+	neutral-active: $color-gray-20
+	neutral-focus: $color-gray-10
+	neutral-hover: $color-white
+
+	secondary: $color-theme-20
+	secondary-active: $color-theme-30
+  secondary-focus: $color-theme-20
+	secondary-hover: $color-theme-10
+
+	primary: $color-theme-60
+	primary-active: $color-theme-70
+	primary-focus: $color-theme-60
+	primary-hover: $color-theme-50
+
+	success: $color-green-60
+	success-active: $color-green-70
+	success-focus: $color-green-60
+	success-hover: $color-green-50
+
+	warning: $color-bronze-60
+	warning-active: $color-bronze-70
+	warning-focus: $color-bronze-60
+	warning-hover: $color-bronze-50
+
+	danger: $color-red-60
+	danger-active: $color-red-70
+	danger-focus: $color-red-60
+	danger-hover: $color-red-50

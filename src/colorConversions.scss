@@ -1,0 +1,87 @@
+@use "sass:math";
+
+@function reversePivotXyz($n){
+  $e: .008856;
+  $k: 903.3;
+  $res: "";
+  @if( math.pow($n,3) > $e ){
+    $res: math.pow($n,3)
+  } @else {
+    $res: calc( ( $n * 116 - 16) / $k );
+  }
+  @return $res;
+}
+
+@function gammaCorrection($x){
+    $a: .0031308;
+    $b: .055;
+    $c: 12.92;
+    $d: 2.4;
+    $res: "";
+    @if ( $x > $a ) {
+      $res: ( 1 + $b ) * math.pow( $x, calc( 1 / $d) ) - $b;
+    } @else {
+      $res: $c * $x ;
+    };
+    @return $res;
+  }
+
+@function lchToLab($l, $c, $h){
+  $lab:
+    ( "l": $l
+    , "a": $c * math.cos( $h )
+    , "b": $c * math.sin( $h )
+    );
+  @return $lab;
+}
+
+@function labToXyz($l, $a, $b){
+  $refX: 95.07;
+  $refY: 100;
+  $refZ: 108.883;
+  $l: calc(  $l / 1% );
+  $fy: calc( ( $l + 16 ) / 116 );
+  $fx: calc( $a / 500 ) + $fy;
+  $fz: $fy - calc( $b / 200 );
+  $xyz:
+    ( "x": reversePivotXyz( $fx ) * $refX
+    , "y": reversePivotXyz( $fy ) * $refY
+    , "z": reversePivotXyz( $fz ) * $refZ
+    );
+  @return $xyz
+}
+
+@function xyzToRgb($x, $y, $z){
+  $x: calc( $x / 100 );
+  $y: calc( $y / 100 );
+  $z: calc( $z / 100 );
+/*
+  */
+  $rgb:
+    ( "r": gammaCorrection( $x * 3.239886 + $y * -1.536869 + $z * -.498444 )
+    , "g": gammaCorrection( $x * -0.967675 + $y * 1.872930 + $z * 0.041488 ) 
+    , "b": gammaCorrection( $x * 0.056595 + $y * -0.207515 + $z * 1.075305 ) 
+    );
+  @return $rgb;
+}
+
+@function lchToRgb($l, $c, $h) {
+  @debug ( $l, $c, $h) ;
+  $lab: lchToLab($l, $c, $h);
+  @debug $lab;
+  $xyz: labToXyz( map-get($lab, "l"), map-get($lab, "a"), map-get($lab, "b") );
+  @debug $xyz;
+  $rgb: xyzToRgb( map-get($xyz, "x"), map-get($xyz, "y"), map-get($xyz, "z") );
+  @debug $rgb;
+  @return $rgb;
+}
+@function lch($l, $c, $h){
+  $rgb: lchToRgb($l, $c, $h);
+  @return rgb(round(map-get($rgb,"r")), round(map-get($rgb,"g")), round(map-get($rgb,"b")));
+}
+
+@function constrainLchToRgb($l, $c, $h){
+
+}
+
+@debug lchToRgb( 90%, 100, 220deg);

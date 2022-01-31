@@ -1,0 +1,19 @@
+# eXtra eXtra Short
+# eXtra Short
+# Short
+# Medium
+# Long
+# eXtra Long
+# eXtra eXtra Long
+
+duration:
+
+  ratio: var(--ratio-golden-ratio)
+
+  xxs: 50
+  xs: calc( var(--duration-xxs) * var(--duration-ratio) )
+  sh: calc( var(--duration-xs) * var(--duration-ratio) )
+  md: calc( var(--duration-sh) * var(--duration-ratio) )
+  ln: calc( var(--duration-md) * var(--duration-ratio) )
+  xl: calc( var(--duration-ln) * var(--duration-ratio) )
+  xxl: calc( var(--duration-xl) * var(--duration-ratio) )
