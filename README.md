@@ -1,5 +1,5 @@
 # WaCss (和Css) (Don't bother downloading this yet)
-![Sakura - Cherry Blossom](/docs/images/sakura_thin.jpg)
+![Sakura - Cherry Blossom](/docs/images/sakura_thin.png)
 
 ## Introduction
 
