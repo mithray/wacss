@@ -1,0 +1,30 @@
+button:
+  background: var(--color-primary)
+  background-active: var(--color-primary-active)
+  background-focus: var(--color-primary-focus)
+	background-hover: var(--color-primary-hover)
+
+  --color-background-l: 50%;
+  --color-1: hsl( var(--color-background-h) var(--color-background-s) var(--color-background-l));
+  --color-2: hsl( var(--color-background-h) calc(var(--color-background-s) + 10%) calc( var(--color-background-l) - 10%));
+  --color-3: hsl( var(--color-background-h) calc(var(--color-background-s) + 20%) calc( var(--color-background-l) - 20%));
+
+  cursor: var(--cursor-pointer);
+	padding: var(--spacing-inset-sm);
+  border-top: 1px solid var(--color-3);
+  border-bottom: 1px solid var(--color-2);
+	border-radius: var(--ui-border-radius);
+  background: linear-gradient(to bottom, var(--color-1) 0%, var(--color-2) 26%, var(--color-3) 100%)
+
+  @include shadow(1,2,3)
+  &:hover {
+    transition: all ease-in-out var(--ui-animation-time);
+    transform: translateY(-.1em);
+  }
+  &:focus {
+    transition: all ease-in-out var(--ui-animation-time);
+    transform: translateY(-.2em);
+  }
+  &:active::before{
+    top: 0;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.7), 0 3px 9px rgba(0, 0, 0, 0.2);

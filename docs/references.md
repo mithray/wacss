@@ -35,4 +35,9 @@ I want to create Universal design tokens and to name them accordingly. Global To
 [even death]: https://www.hcinnovationgroup.com/interoperability-hie/article/13008122/the-cost-of-interoperability "The cost of interoperability"
 [Color Calculations]: https://colorcalculations.wordpress.com/xyz-to-rgb/
 [MineralUI]: https://mineral-ui.netlify.app/theming
-[Open Props]: https://open-props.style/#getting-started
+[Open Props]: https://open-props.style
+[Momentum]: https://momentum.design
+[Nordhealth Design]: https://nordhealth.design
+[Photon]: https://design.firefox.com/photon/
+[Duet Design System]: https://www.duetds.com
+[Graphite]: https://graphitedesignsystem.com

@@ -1,0 +1,56 @@
+color:
+
+  theme-10: $color-green-10
+  theme-20: $color-green-20
+  theme-30: $color-green-30
+  theme-40: $color-green-40
+  theme-50: $color-green-50
+  theme-60: $color-green-60
+  theme-70: $color-green-70
+  theme-80: $color-green-80
+  theme-90: $color-green-90
+  theme-100: $color-green-100
+
+  text-dark: $color-gray-100
+	text-light: $color-gray-10
+
+	read-only: $gray-80
+	required: $color-red-60
+  invalid: $color-bronze-60
+	disabled: $color-gray-20
+
+	primary: $color-theme-60
+	primary-active: $color-theme-70
+	primary-focus: $color-theme-60
+	primary-hover: $color-theme-50
+
+	secondary: $color-theme-20
+	secondary-active: $color-theme-30
+  secondary-focus: $color-theme-20
+	secondary-hover: $color-theme-10
+
+  tertiary: $color-gray-10
+	tertiary-active: $color-gray-20
+	tertiary-focus: $color-gray-10
+	tertiary-hover: $color-white
+
+	success: $color-green-60
+	success-active: $color-green-70
+	success-focus: $color-green-60
+	success-hover: $color-green-50
+
+	warning: $color-bronze-60
+	warning-active: $color-bronze-70
+	warning-focus: $color-bronze-60
+	warning-hover: $color-bronze-50
+
+	danger: $color-red-60
+	danger-active: $color-red-70
+	danger-focus: $color-red-60
+	danger-hover: $color-red-50
+
+  gradient: 
+    direction: to bottom
+    color-light: var
+    color-dark:
+    linear-gradient: ( var(--color-gradient-direction), rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0))

@@ -1,0 +1,35 @@
+spacing:
+
+  ratio: var(--ratio-typography-scale)
+
+	stack-2xs: 0.382em
+	stack-xs:  calc( var(--spacing-stack-2xs) * var(--spacing-ratio) )
+	stack-sm:  calc( var(--spacing-stack-xs)  * var(--spacing-ratio) )
+	stack-md:  calc( var(--spacing-stack-sm)  * var(--spacing-ratio) )
+	stack-lg:  calc( var(--spacing-stack-md)  * var(--spacing-ratio) )
+	stack-xl:  calc( var(--spacing-stack-lg)  * var(--spacing-ratio) )
+	stack-2xl: calc( var(--spacing-stack-xl)  * var(--spacing-ratio) )
+
+	inset-2xs: 0.146em
+	inset-xs:  calc( var(--spacing-inset-2xs) * var(--spacing-ratio) )
+	inset-sm:  calc( var(--spacing-inset-xs)  * var(--spacing-ratio) )
+	inset-md:  calc( var(--spacing-inset-sm)  * var(--spacing-ratio) )
+	inset-lg:  calc( var(--spacing-inset-md)  * var(--spacing-ratio) )
+	inset-xl:  calc( var(--spacing-inset-lg)  * var(--spacing-ratio) )
+	inset-2xl: calc( var(--spacing-inset-xl)  * var(--spacing-ratio) )
+
+  inline-2xs: 0.0902em
+	inline-xs:  calc( var(--spacing-inline-2xs) * var(--spacing-ratio) )
+	inline-sm:  calc( var(--spacing-inline-xs)  * var(--spacing-ratio) )
+	inline-md:  calc( var(--spacing-inline-sm)  * var(--spacing-ratio) )
+	inline-lg:  calc( var(--spacing-inline-md)  * var(--spacing-ratio) )
+	inline-xl:  calc( var(--spacing-inline-lg)  * var(--spacing-ratio) )
+	inline-2xl: calc( var(--spacing-inline-xl)  * var(--spacing-ratio) )
+
+  vertical-2xs: 0.146em
+	vertical-xs:  calc( var(--spacing-vertical-2xs) * var(--spacing-ratio) )
+	vertical-sm:  calc( var(--spacing-vertical-xs)  * var(--spacing-ratio) )
+	vertical-md:  calc( var(--spacing-vertical-sm)  * var(--spacing-ratio) )
+	vertical-lg:  calc( var(--spacing-vertical-md)  * var(--spacing-ratio) )
+	vertical-xl:  calc( var(--spacing-vertical-lg)  * var(--spacing-ratio) )
+	vertical-2xl: calc( var(--spacing-vertical-xl)  * var(--spacing-ratio) )

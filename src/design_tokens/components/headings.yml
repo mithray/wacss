@@ -1,0 +1,24 @@
+h1:
+  font-size: var(--typography-font-size-3xl)
+  font-weight: var(--typography-font-weight-extra-bold)
+  margin: var(--spacing-stack-2xl)
+h2:
+  font-size: var(--typography-font-size-2xl)
+  font-weight: var(--typography-font-weight-bold)
+  margin: var(--spacing-stack-xl)
+h3:
+  font-size: var(--typography-font-size-xl)
+  font-weight: var(--typography-font-weight-semi-bold)
+  margin: var(--spacing-stack-lg)
+h4:
+  font-size: var(--typography-font-size-lg)
+  font-weight: var(--typography-font-weight-medium)
+  margin: var(--spacing-stack-md)
+h5:
+  font-size: var(--typography-font-size-md)
+  font-weight: var(--typography-font-weight-medium)
+  margin: var(--spacing-stack-md)
+h6:
+  font-size: var(--typography-font-size-sm)
+  font-weight: var(--typography-font-weight-regular)
+  margin: var(--spacing-stack-sm)

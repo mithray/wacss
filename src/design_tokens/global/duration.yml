@@ -10,7 +10,7 @@ duration:
 
   ratio: var(--ratio-golden-ratio)
 
-  xxs: 50
+  xxs: 50ms
   xs: calc( var(--duration-xxs) * var(--duration-ratio) )
   sh: calc( var(--duration-xs) * var(--duration-ratio) )
   md: calc( var(--duration-sh) * var(--duration-ratio) )

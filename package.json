@@ -5,10 +5,13 @@
   "main": "dist/wacss.css",
   "dependencies": {
     "feather-icons": "^4.28.0",
+    "js-yaml": "^4.1.0",
     "mineral-ui-tokens": "^0.4.0",
     "sass": "^1.48.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "json-to-scss": "^1.6.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

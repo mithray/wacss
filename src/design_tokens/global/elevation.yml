@@ -1,0 +1,187 @@
+elevation:
+
+  ratio:
+
+    shadow:
+      offsetX: 0em
+      offsetY: var(--ratio-s12)
+      blur: var(--ratio-s1)
+      spread: var(--ratio-s1)
+      opacity: var(--ratio-s1)
+
+    translateY: var(--ratio-s1)
+    scale: var(--ratio-s1)
+    sunken-border: var(--ratio-s1)
+
+  sunken:
+    1:
+      box-shadow: 0em .1em .2em 0em rgba(0,0,0,0.2), 0 2px 4px 0 rgba(0,0,0,.2)
+      border: calc(var(--border-width) * var(--ratio-sunken-border))
+    2:
+      box-shadow: 0em .05em 1em 0em rgba(0,0,0,0.2), 0 2px 4px 0 rgba(0,0,0,0.2)
+      border: calc( var(--elevation-sunken-1) * var(--ratio-sunken-border))
+
+  raised:
+    0:
+      shadow:
+        directional:
+          offsetX: 0em
+          offsetY: 0em
+          blur: 0em
+          spread: 0em
+          opacity: 1
+          color: rgba(0,0,0, var(--elevation-raised-0-shadow-directional-opacity))
+        ambient:
+          offsetX: 0em
+          offsetY: 0em
+          blur: 0em
+          spread: 0em
+          opacity: 1
+          color: rgba(0,0,0, var(--elevation-raised-0-shadow-ambient-opacity))
+      box-shadow: >
+        var(--elevation-raised-0-shadow-directional-offsetX) 
+        var(--elevation-raised-0-shadow-directional-offsetY)
+        var(--elevation-raised-0-shadow-directional-blur)
+        var(--elevation-raised-0-shadow-directional-spread)
+        var(--elevation-raised-0-shadow-directional-color)
+        ,
+        var(--elevation-raised-0-shadow-ambient-offsetX)
+        var(--elevation-raised-0-shadow-ambient-offsetY)
+        var(--elevation-raised-0-shadow-ambient-blur)
+        var(--elevation-raised-0-shadow-ambient-spread)
+        var(--elevation-raised-0-shadow-ambient-color)
+      scale: 0em
+      translateY: 0em
+      transform: scale(var(--elevation-raised-0-scale)) translateY(var(--elevation-raised-0-translateY))
+    1:
+      shadow:
+        directional:
+          offsetX: 0em
+          offsetY: .1em
+          blur: .2em
+          spread: .05em
+          opacity: .4
+          color: rgba(0,0,0, var(--elevation-raised-1-shadow-directional-opacity))
+        ambient:
+          offsetX: 0em
+          offsetY: 0em
+          blur: .2em
+          spread: .05em
+          opacity: .4
+          color: rgba(0,0,0, var(--elevation-raised-1-shadow-ambient-opacity))
+      box-shadow: >
+        var(--elevation-raised-1-shadow-directional-offsetX) 
+        var(--elevation-raised-1-shadow-directional-offsetY)
+        var(--elevation-raised-1-shadow-directional-blur)
+        var(--elevation-raised-1-shadow-directional-spread)
+        var(--elevation-raised-1-shadow-directional-color)
+        ,
+        var(--elevation-raised-1-shadow-ambient-offsetX)
+        var(--elevation-raised-1-shadow-ambient-offsetY)
+        var(--elevation-raised-1-shadow-ambient-blur)
+        var(--elevation-raised-1-shadow-ambient-spread)
+        var(--elevation-raised-1-shadow-ambient-color)
+      scale: var(--elevation-ratio-scale)
+      translateY: var(--spacing-vertical-sm)
+      transform: >
+        scale(var(--elevation-raised-1-scale))
+        translateY(var(--elevation-raised-1-translateY))
+    2: 
+      shadow:
+        directional:
+          offsetX:  calc( var(--elevation-raised-1-shadow-directional-offsetX)  * var(--elevation-ratio-shadow-offsetY) )
+          offsetY:  calc( var(--elevation-raised-1-shadow-directional-offsetY)  * var(--elevation-ratio-shadow-offsetY) )
+          blur:     calc( var(--elevation-raised-1-shadow-directional-blur)     * var(--elevation-ratio-shadow-offsetY) )
+          spread:   calc( var(--elevation-raised-1-shadow-directional-spread)   * var(--elevation-ratio-shadow-offsetY) )
+          opacity:  calc( var(--elevation-raised-1-shadow-directional-opacity)  / var(--elevation-ratio-shadow-offsetY) )
+          color:    rgba( 0,0,0, var(--elevation-raised-2-shadow-directional-opacity) )
+        ambient:
+          offsetX:  calc( var(--elevation-raised-1-shadow-ambient-offsetX)  * var(--elevation-ratio-shadow-offsetY) )
+          offsetY:  calc( var(--elevation-raised-1-shadow-ambient-offsetY)  * var(--elevation-ratio-shadow-offsetY) )
+          blur:     calc( var(--elevation-raised-1-shadow-ambient-blur)     * var(--elevation-ratio-shadow-offsetY) )
+          spread:   calc( var(--elevation-raised-1-shadow-ambient-spread)   * var(--elevation-ratio-shadow-offsetY) )
+          opacity:  calc( var(--elevation-raised-1-shadow-ambient-opacity)  / var(--elevation-ratio-shadow-offsetY) )
+          color:    rgba( 0,0,0, var(--elevation-raised-2-shadow-ambient-opacity) )
+      box-shadow: >
+        var(--elevation-raised-2-shadow-directional-offsetX)  
+        var(--elevation-raised-2-shadow-directional-offsetY) 
+        var(--elevation-raised-2-shadow-directional-blur)   
+        var(--elevation-raised-2-shadow-directional-spread)  
+        var(--elevation-raised-2-shadow-directional-color)   
+        ,
+        var(--elevation-raised-2-shadow-ambient-offsetX)  
+        var(--elevation-raised-2-shadow-ambient-offsetY) 
+        var(--elevation-raised-2-shadow-ambient-blur)   
+        var(--elevation-raised-2-shadow-ambient-spread)
+        var(--elevation-raised-2-shadow-ambient-color)
+      scale: calc(var(--elevation-raised-1-scale) * var(--elevation-ratio-scale) )
+      translateY: calc(var(--elevation-raised-1-translateY) * var(--elevation-ratio-translateY) )
+      transform: >
+        scale(      var(--elevation-raised-2-scale)      )
+        translateY( var(--elevation-raised-2-translateY) )
+    3: 
+      shadow:
+        directional:
+          offsetX:  calc( var(--elevation-raised-2-shadow-directional-offsetX)  * var(--elevation-ratio-shadow-offsetY) )
+          offsetY:  calc( var(--elevation-raised-2-shadow-directional-offsetY)  * var(--elevation-ratio-shadow-offsetY) )
+          blur:     calc( var(--elevation-raised-2-shadow-directional-blur)     * var(--elevation-ratio-shadow-offsetY) )
+          spread:   calc( var(--elevation-raised-2-shadow-directional-spread)   * var(--elevation-ratio-shadow-offsetY) )
+          opacity:  calc( var(--elevation-raised-2-shadow-directional-opacity)  / var(--elevation-ratio-shadow-offsetY) )
+          color:    rgba( 0,0,0, var(--elevation-raised-3-shadow-directional-opacity) )
+        ambient:
+          offsetX:  calc( var(--elevation-raised-2-shadow-ambient-offsetX)  * var(--elevation-ratio-shadow-offsetY) )
+          offsetY:  calc( var(--elevation-raised-2-shadow-ambient-offsetY)  * var(--elevation-ratio-shadow-offsetY) )
+          blur:     calc( var(--elevation-raised-2-shadow-ambient-blur)     * var(--elevation-ratio-shadow-offsetY) )
+          spread:   calc( var(--elevation-raised-2-shadow-ambient-spread)   * var(--elevation-ratio-shadow-offsetY) )
+          opacity:  calc( var(--elevation-raised-2-shadow-ambient-opacity)  / var(--elevation-ratio-shadow-offsetY) )
+          color:    rgba( 0,0,0, var(--elevation-raised-3-shadow-ambient-opacity) )
+      box-shadow: >
+        var(--elevation-raised-3-shadow-directional-offsetX)  
+        var(--elevation-raised-3-shadow-directional-offsetY) 
+        var(--elevation-raised-3-shadow-directional-blur)   
+        var(--elevation-raised-3-shadow-directional-spread)  
+        var(--elevation-raised-3-shadow-directional-color)   
+        ,
+        var(--elevation-raised-3-shadow-ambient-offsetX)  
+        var(--elevation-raised-3-shadow-ambient-offsetY) 
+        var(--elevation-raised-3-shadow-ambient-blur)   
+        var(--elevation-raised-3-shadow-ambient-spread)
+        var(--elevation-raised-3-shadow-ambient-color)
+      scale: calc(var(--elevation-raised-2-scale) * var(--elevation-ratio-scale) )
+      translateY: calc(var(--elevation-raised-2-translateY) * var(--elevation-ratio-translateY) )
+      transform: >
+        scale(      var(--elevation-raised-3-scale)      )
+        translateY( var(--elevation-raised-3-translateY) )
+    4: 
+      shadow:
+        directional:
+          offsetX:  calc( var(--elevation-raised-3-shadow-directional-offsetX)  * var(--elevation-ratio-shadow-offsetY) )
+          offsetY:  calc( var(--elevation-raised-3-shadow-directional-offsetY)  * var(--elevation-ratio-shadow-offsetY) )
+          blur:     calc( var(--elevation-raised-3-shadow-directional-blur)     * var(--elevation-ratio-shadow-offsetY) )
+          spread:   calc( var(--elevation-raised-3-shadow-directional-spread)   * var(--elevation-ratio-shadow-offsetY) )
+          opacity:  calc( var(--elevation-raised-3-shadow-directional-opacity)  / var(--elevation-ratio-shadow-offsetY) )
+          color:    rgba( 0,0,0, var(--elevation-raised-4-shadow-directional-opacity) )
+        ambient:
+          offsetX:  calc( var(--elevation-raised-3-shadow-ambient-offsetX)  * var(--elevation-ratio-shadow-offsetY) )
+          offsetY:  calc( var(--elevation-raised-3-shadow-ambient-offsetY)  * var(--elevation-ratio-shadow-offsetY) )
+          blur:     calc( var(--elevation-raised-3-shadow-ambient-blur)     * var(--elevation-ratio-shadow-offsetY) )
+          spread:   calc( var(--elevation-raised-3-shadow-ambient-spread)   * var(--elevation-ratio-shadow-offsetY) )
+          opacity:  calc( var(--elevation-raised-3-shadow-ambient-opacity)  / var(--elevation-ratio-shadow-offsetY) )
+          color:    rgba( 0,0,0, var(--elevation-raised-4-shadow-ambient-opacity) )
+      box-shadow: >
+        var(--elevation-raised-4-shadow-directional-offsetX)  
+        var(--elevation-raised-4-shadow-directional-offsetY) 
+        var(--elevation-raised-4-shadow-directional-blur)   
+        var(--elevation-raised-4-shadow-directional-spread)  
+        var(--elevation-raised-4-shadow-directional-color)   
+        ,
+        var(--elevation-raised-4-shadow-ambient-offsetX)  
+        var(--elevation-raised-4-shadow-ambient-offsetY) 
+        var(--elevation-raised-4-shadow-ambient-blur)   
+        var(--elevation-raised-4-shadow-ambient-spread)
+        var(--elevation-raised-4-shadow-ambient-color)
+      scale: calc(var(--elevation-raised-3-scale) * var(--elevation-ratio-scale) )
+      translateY: calc(var(--elevation-raised-3-translateY) * var(--elevation-ratio-translateY) )
+      transform: >
+        scale(      var(--elevation-raised-4-scale)      )
+        translateY( var(--elevation-raised-4-translateY) )

@@ -1,0 +1,29 @@
+breakpoint:
+
+  mobile-small:
+    lower: 0px
+    upper: 300px
+  mobile-large:
+    lower: 300px
+    upper: 600px
+  
+  tablet-small:
+    lower: 600px
+    upper: 900px
+  tablet-large:
+    lower: 900px
+    upper: 1200px
+  
+  laptop-small:
+    lower: 1200px
+    upper: 1500px
+  laptop-large:
+    lower: 1500px
+    upper: 1800px
+  
+  desktop-small:
+    lower: 1800px
+    upper: 2400px
+  desktop-large:
+    lower: 2400px
+    upper: 2800px

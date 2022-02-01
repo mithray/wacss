@@ -1,0 +1,30 @@
+border:
+
+  radius:
+
+    ratio: var(--ratio-octave)
+    
+    2xs: 0.1em
+    xs: calc( var(--border-radius-2xs) * var(--border-radius-ratio))
+    sm: calc( var(--border-radius-xs) * var(--border-radius-ratio))
+    md: calc( var(--border-radius-sm) * var(--border-radius-ratio))
+    lg: calc( var(--border-radius-md) * var(--border-radius-ratio))
+    xl: calc( var(--border-radius-lg) * var(--border-radius-ratio))
+    2xl: calc( var(--border-radius-xl) * var(--border-radius-ratio))
+    
+    sharp: 0
+    pill: 1000em
+    circle: 50%
+
+  width:
+
+    ratio: var(--ratio-perfect-fifth)
+    
+    0: 0
+    2xs: .1em
+    xs: calc( var(--border-radius-2xs) * var(--border-width-ratio))
+    sm: calc( var(--border-radius-xs) * var(--border-width-ratio))
+    md: calc( var(--border-radius-sm) * var(--border-width-ratio))
+    lg: calc( var(--border-radius-md) * var(--border-width-ratio))
+    xl: calc( var(--border-radius-lg) * var(--border-width-ratio))
+    2xl: calc( var(--border-radius-xl) * var(--border-width-ratio))
