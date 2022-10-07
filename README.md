@@ -1,9 +1,8 @@
-# WaCss
 <p align="center">
   <img src="./cherry_blossom_72.png" />
 </p>
 
-## Introduction
+# WaCss
 
 WaCSS is a CSS library designed to work on bare (Classless) Semantic HTML5, which enhances accessibility, and uses standards based components. 
 
