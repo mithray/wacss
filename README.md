@@ -1,5 +1,5 @@
 # WaCss
-![Sakura - Cherry Blossom](./cherry_blossom.png)
+![Sakura - Cherry Blossom](./cherry_blossom_72.png)
 
 ## Introduction
 
