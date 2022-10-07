@@ -4,9 +4,9 @@
   "description": "A Generic CSS Stylesheet that encourages conformity to standardized HTML, ARIA and Schema practices thereby creating improved Usability/Accessibility for a greater number of people. The Japanese word \"和\" which can be translated as \"teamwork\" or \"harmony\" or \"peace\". I hope this stylesheet will establish a kind of harmony(usability) through its conformance and dependence on community standards(teamwork). Classless. Aims to work well on Screenreaders or without Javascript.",
   "main": "dist/wacss.css",
   "dependencies": {
-    "feather-icons": "^4.28.0",
+    "feather-icons": "^4.29.0",
     "js-yaml": "^4.1.0",
-    "mineral-ui-tokens": "^0.4.0",
+    "modern-normalize": "^1.1.0",
     "sass": "^1.48.0"
   },
   "devDependencies": {
