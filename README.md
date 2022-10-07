@@ -1,5 +1,7 @@
 # WaCss
-![Sakura - Cherry Blossom](./cherry_blossom_72.png)
+<p align="center">
+  <img src="./cherry_blossom_72.png" />
+</p>
 
 ## Introduction
 
