@@ -4,7 +4,7 @@
 
 # WaCss
 
-WaCSS is a CSS library designed to work on bare (Classless) Semantic HTML5, which enhances accessibility, and uses standards based components. 
+WaCSS is a CSS library designed to work on Semantic HTML5, which enhances accessibility, and uses standards based components. 
 
 ## Contents
 
@@ -14,6 +14,7 @@ WaCSS is a CSS library designed to work on bare (Classless) Semantic HTML5, whic
 ## Goals
 
 - Beauty
+
   Beautiful output
 
 - Elegance
