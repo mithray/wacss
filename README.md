@@ -13,21 +13,14 @@ WaCSS is a CSS library designed to work on Semantic HTML5, which enhances access
 
 ## Goals
 
-- Beauty
+- Beauty. Beautiful output
 
-  Beautiful output
+- Elegance. HTML markup should not require a lot of ugly and long classes. It should be easy to understand.
 
-- Elegance
-  HTML markup should not require a lot of ugly and long classes. It should be easy to understand.
+- Lightweight. Low Gzip Size
 
-- Lightweight
-  Low Gzip Size
+- Lines of Code. CSS Codebase should be small
 
-- Lines of Code
-  CSS Codebase should be small
+- Expressiveness. Should have functionality for many common components.
 
-- Expressiveness
-  Should have functionality for many common components.
-
-- Accesible
-  Should encourage Accessibility, usability, compliance to HTML standards. Should use HTML elements in ways which they are supposed to be used and not try to force elements to do what they shouldn't.
+- Accesible. Should encourage Accessibility, usability, compliance to HTML standards. Should use HTML elements in ways which they are supposed to be used and not try to force elements to do what they shouldn't.

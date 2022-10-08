@@ -1,0 +1,40 @@
+.grid-masonry {
+  --grid-line-height: 8em;
+  display: flex;
+  flex-wrap: wrap;
+  > * {
+    height: var(--grid-line-height);
+    line-height: var(--grid-line-height);
+    flex: 1 0 auto;/**/
+  }
+
+}
+.grid-equal {
+  //--grid-line-height: 8em;
+  --grid-item-min-width: 10em;
+  --grid-gap: 0em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-min-width), 1fr));
+  grid-gap: var(--grid-gap);
+  align-items: center;
+  > * {
+    display: block;
+  }
+}
+
+
+.layout{
+ @for $i from 1 through 36 {
+    div:nth-child(#{$i}) {
+      /*
+      height: $h;
+      */
+      $randomness: 5;
+      $h: (random($randomness) + 5) + em;
+
+      width: $h;
+      background: hsl(random(360) * 1deg,20+random(10)*1%,30+random(40)*1%);
+    }
+  }
+}
+* {border:0; margin: 0;padding:0; box-sizing: border-box;}
