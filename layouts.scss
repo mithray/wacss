@@ -1,40 +1,59 @@
-.grid-masonry {
-  --grid-line-height: 8em;
+.stack {
+  --spacing: 1.5rem;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
   > * {
-    height: var(--grid-line-height);
-    line-height: var(--grid-line-height);
-    flex: 1 0 auto;/**/
+    margin-block: 0;
   }
-
+  > * + * {
+    margin-block-start: var(--spacing,1.5rem);
+  }
 }
+
+[class^="grid-"] {
+  --grid-tile-size: 10em;
+        --grid-gap: 1em;
+}
+
 .grid-equal {
-  //--grid-line-height: 8em;
-  --grid-item-min-width: 10em;
-  --grid-gap: 0em;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-min-width), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%,var(--grid-tile-size)), 1fr));
   grid-gap: var(--grid-gap);
   align-items: center;
-  > * {
+	
+ 	img {
+  	width: 100%;
     display: block;
-  }
+   }
 }
 
-
-.layout{
- @for $i from 1 through 36 {
-    div:nth-child(#{$i}) {
-      /*
-      height: $h;
-      */
-      $randomness: 5;
-      $h: (random($randomness) + 5) + em;
-
-      width: $h;
-      background: hsl(random(360) * 1deg,20+random(10)*1%,30+random(40)*1%);
+@supports not (grid-template-rows: masonry){
+  .grid-masonry {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    row-gap: var(--grid-gap);
+    column-gap: var(--grid-gap);
+    padding: var(--grid-gap);
+    * {
+      height: var(--grid-tile-size);
+      line-height: var(--grid-tile-size);
     }
   }
 }
-* {border:0; margin: 0;padding:0; box-sizing: border-box;}
+
+@supports (grid-template-rows: masonry){
+  .grid-masonry {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--grid-tile-size), 1fr));
+    grid-template-rows: masonry;
+    gap: var(--grid-gap);
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+}

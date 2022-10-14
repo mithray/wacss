@@ -1,12 +1,23 @@
 article {
   figure {
-
   }
   header {
-
-
+    opacity: .8;
+    padding: 0;
+    color: var(--color-text);
+    background: var(--color-background);
+    border-radius: var(--ui-sharpness);
+    border: .1em solid var(--color-text);
+  }
+  p {
   }
   footer {
-
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    transform: translate(0%, 0%) scale(1.01);
+    cursor: pointer;
+    border: .15em solid var(--color-text);
   }
 }

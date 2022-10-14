@@ -1,0 +1,83 @@
+/* Pug */
+
+- const endpoint = "https://placekitten.com/g/"
+- const getRandomImageUrl = () => {
+- 	const w = Math.ceil(Math.random() * 10)  * 100
+-		const h = w + -100 + Math.ceil(Math.random() * 20) * 10
+-		return endpoint + w + "/" + h
+- }
+- var n = 0;
+section.grid-masonry
+	while n < 20
+		- n++
+		a(href="#")
+			img(src=getRandomImageUrl(), alt="cat")
+
+
+/* SCSS */
+
+.grid-masonry {
+	--grid-item-min-width: 10em;
+	--grid-gap: .5em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-min-width), 1fr));
+	grid-template-rows: masonry;
+	justify-content: center;
+	grid-gap: var(--grid-gap);
+	padding: 0;
+
+	> * {
+		align-self: start;
+		border: .5em solid #178;
+	}
+
+}
+
+img {
+	display: block;
+	width: 100%;
+}
+
+/* JS */
+let grids = [...document.querySelectorAll('.grid-masonry')];
+
+if(grids.length && getComputedStyle(grids[0]).gridTemplateRows !== 'masonry') {
+	grids = grids.map(grid => ({
+		_el: grid, 
+		gap: parseFloat(getComputedStyle(grid).gridRowGap), 
+		items: [...grid.childNodes].filter(c => c.nodeType === 1), 
+		ncol: 0
+	}));
+
+	
+	const layout = () => {
+		grids.forEach(grid => {
+			/* get the post relayout number of columns */
+			let ncol = getComputedStyle(grid._el).gridTemplateColumns.split(' ').length;
+
+			/* if the number of columns has changed */
+			if(grid.ncol !== ncol) {
+				/* update number of columns */
+				grid.ncol = ncol;
+
+				/* revert to initial positioning, no margin */
+				grid.items.forEach(c => c.style.removeProperty('margin-top'));
+
+				/* if we have more than one column */
+				if(grid.ncol > 1) {
+					grid.items.slice(ncol).forEach((c, i) => {
+						let prev_fin = grid.items[i].getBoundingClientRect().bottom /* bottom edge of item above */, 
+								curr_ini = c.getBoundingClientRect().top /* top edge of current item */;
+						
+						c.style.marginTop = `${prev_fin + grid.gap - curr_ini}px`
+					})
+				}
+			}
+		})
+	}
+
+	addEventListener('load', e => {
+		layout(); /* initial load */
+		addEventListener('resize', layout, false) /* on resize */
+	}, false);
+}
