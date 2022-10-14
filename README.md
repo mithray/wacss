@@ -4,7 +4,7 @@
 
 # WaCss
 
-WaCSS is a CSS library designed to work on Semantic HTML5 and ARIA attributes, encouraging developers to practice accessibility and making the web more accesible. Wa is a Japanese word which isdescribed by Wikipedia:
+WaCSS is a CSS library designed to work on Semantic HTML5 and ARIA attributes, encouraging developers to practice accessibility and making the web more accesible. Wa is a Japanese word which is described by Wikipedia:
 
 > ...implies a peaceful unity and conformity within a social group in which members prefer the continuation of a harmonious community over their personal interests.
 > \- [Wa][]
