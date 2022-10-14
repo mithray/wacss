@@ -27,12 +27,14 @@ WaCSS is a CSS library designed to work on Semantic HTML5 and ARIA attributes, e
 Here is a summary of the kinds of users/user agent pairs this library will attempt to support. All interaction types, Keyboard, Mouse and Touch should be supported by this library on all viewports which support them. 
 
 - Without Javascript
+
 |                |Sighted|Unsighted - Static Content|Unsighted - Dynamic Content|
 |----------------|-------|--------------------------|---------------------------|
 |With Hearing    |yes    |yes                       |no                         |
 |Hearing Impaired|yes    |no                        |no                         |
 
 - With Javascript
+
 |                |Sighted|Unsighted - Static Content|Unsighted - Dynamic Content|
 |----------------|-------|--------------------------|---------------------------|
 |With Hearing    |yes    |yes                       |yes                        |
