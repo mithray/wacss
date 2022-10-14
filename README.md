@@ -22,15 +22,27 @@ WaCSS is a CSS library designed to work on Semantic HTML5 and ARIA attributes, e
 
 ## User Targets
 
-The order of testing goes like this:
+### Summary
 
-1. No Javascript. It should function well with no Javascript first, because any problems that exist when Javascript is enabled can be fixed with Javascript.
-2. *Interaction types*. Keyboard, Mouse, Touch
-3. *Sensory types*. With/without Sighted.
-4. *Sensory types*. With/without Hearing.
-5. Various Viewport Sizes
-6. With Javascript improving the UX of all.
+Here is a summary of the kinds of users/user agent pairs this library will attempt to support. All interaction types, Keyboard, Mouse and Touch should be supported by this library on all viewports which support them. 
 
+- Without Javascript
+|                |Sighted|Unsighted - Static Content|Unsighted - Dynamic Content|
+|With Hearing    |yes    |yes                       |no                         |
+|Hearing Impaired|yes    |no                        |no                         |
+
+- With Javascript
+|                |Sighted|Unsighted - Static Content|Unsighted - Dynamic Content|
+|With Hearing    |yes    |yes                       |yes                        |
+|Hearing Impaired|yes    |no                        |no                         |
+
+### Concerning Javascript:
+
+1. No Javascript. Everything should function well with no Javascript first, at least for users with hearing ability. This comes first because any problems that exist when Javascript is enabled can be fixed with Javascript. However, lack of Javascript is not considered to be an accessibility issue, and there are many limits in what can be done, especially with complex interactions, without Javascript. It is generally accepted that interactive components can have aria states changed by Javascript. However, Semantic HTML5 & static aria roles where necessary are encouraged. Without proper support from HTML/CSS it's not possible to provide dynamic content for users who are sight impaired without Javascript. This is not considered problematic by [Accessibility Association][AA]
+
+> "Modern screen readers and other assistive technologies can process the results of JavaScript processes, as long as the JavaScript is coded with accessibility in mind. There are no inherent barriers in the technologies themselves to making JavaScript inaccessible."
+> \- [Accessibility Association][WAS]
+  
 ## Categories
 
 ### Layout
@@ -41,3 +53,6 @@ A `layout` refers to a set of style declarations which specify only the relation
 ### Component
 A `component` refers to a set of style declarations which specify  
 --> 
+
+[WAS]: https://www.accessibilityassociation.org/resource/WAS_Certification_FInal_2020_FINAL
+[AA]: https://www.accessibilityassociation.org
