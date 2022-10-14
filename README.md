@@ -42,11 +42,12 @@ Here is a summary of the kinds of users/user agent pairs this library will attem
 
 ### Concerning Javascript:
 
-1. No Javascript. Everything should function well with no Javascript first, at least for users with hearing ability. This comes first because any problems that exist when Javascript is enabled can be fixed with Javascript. However, lack of Javascript is not considered to be an accessibility issue, and there are many limits in what can be done, especially with complex interactions, without Javascript. It is generally accepted that interactive components can have aria states changed by Javascript. However, Semantic HTML5 & static aria roles where necessary are encouraged. Without proper support from HTML/CSS it's not possible to provide dynamic content for users who are sight impaired without Javascript. This is not considered problematic by [Accessibility Association][AA]
+Everything should function well with no Javascript first, especially for users who aren't relying on screen readers. However, some dynamic content relies on the ability of Javascript to change ARIA states and lack of Javascript is not considered to be an accessibility issue. There are many limits in what can be done, especially with complex interactions, without Javascript. Without proper support from HTML/CSS it's not possible to provide dynamic content for users who are sight impaired without Javascript. This is not considered problematic by [Accessibility Association][AA]
 
 > "Modern screen readers and other assistive technologies can process the results of JavaScript processes, as long as the JavaScript is coded with accessibility in mind. There are no inherent barriers in the technologies themselves to making JavaScript inaccessible."
 > \- [Accessibility Association][WAS]
   
+This comes first because any problems that exist when Javascript is enabled can be fixed with Javascript. 
 ## Categories
 
 ### Layout
