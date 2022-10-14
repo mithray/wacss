@@ -4,7 +4,12 @@
 
 # WaCss
 
-WaCSS is a CSS library designed to work on Semantic HTML5 and ARIA attributes, encouraging developers to practice accessibility and making the web more accesible.
+WaCSS is a CSS library designed to work on Semantic HTML5 and ARIA attributes, encouraging developers to practice accessibility and making the web more accesible. Wa is a Japanese word which isdescribed by Wikipedia:
+
+> ...implies a peaceful unity and conformity within a social group in which members prefer the continuation of a harmonious community over their personal interests.
+> \- [Wa][]
+
+In the context of this library, the term is intended to mean conformity to Web Standards in such a way that makes the Web a nicer place for all of it's users where we have uniform patterns of describing documents which make it easier for people who rely on Assistive Technology. At the same time, Wa is intended to facilitate the ability of customization of components with importing design systems, thereby actually facilitating production of beaituful designs.
 
 ## Contents
 
@@ -61,3 +66,4 @@ A `component` refers to a set of style declarations which specify
 
 [WAS]: https://www.accessibilityassociation.org/resource/WAS_Certification_FInal_2020_FINAL
 [AA]: https://www.accessibilityassociation.org
+[Wa]: https://en.wikipedia.org/wiki/Wa_(Japanese_culture)
