@@ -28,11 +28,13 @@ Here is a summary of the kinds of users/user agent pairs this library will attem
 
 - Without Javascript
 |                |Sighted|Unsighted - Static Content|Unsighted - Dynamic Content|
+|----------------|-------|--------------------------|---------------------------|
 |With Hearing    |yes    |yes                       |no                         |
 |Hearing Impaired|yes    |no                        |no                         |
 
 - With Javascript
 |                |Sighted|Unsighted - Static Content|Unsighted - Dynamic Content|
+|----------------|-------|--------------------------|---------------------------|
 |With Hearing    |yes    |yes                       |yes                        |
 |Hearing Impaired|yes    |no                        |no                         |
 
